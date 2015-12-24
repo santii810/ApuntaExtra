@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ApuntaExtra</string>
+    <string name="btn_logout_from_google">Log out</string>
+    <string name="signed_out">Sesion cerrada</string>
+    <string name="loading">Cargando</string>
+    <string name="signed_in_fmt">Sesion iniciada</string>
 </resources>
