@@ -17,6 +17,7 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
+import com.parse.Parse;
 
 import sgomez.ejercicios.apuntaextra.Model.Usuario;
 import sgomez.ejercicios.apuntaextra.R;
@@ -36,6 +37,10 @@ public class MainActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        Parse.enableLocalDatastore(this);
+        Parse.initialize(this);
 
         // Button listeners
         findViewById(R.id.sign_in_button).setOnClickListener(new View.OnClickListener() {

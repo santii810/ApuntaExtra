@@ -13,6 +13,13 @@ public class ParseUsuarioRepository {
     public ParseUsuarioRepository() {
     }
 
+/*
+    public String addUsuario(Usuario usuario){
 
-    public String 
+    }
+
+
+    private boolean existeUsuario(String googleId){
+
+    }*/
 }

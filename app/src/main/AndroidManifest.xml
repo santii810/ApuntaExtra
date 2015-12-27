@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="sgomez.ejercicios.apuntaextra">
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,6 +17,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.IniciarSesionActivity"></activity>
+        <meta-data
+            android:name="com.parse.APPLICATION_ID"
+            android:value="7fd4572Fnf1o4JDhU5Nm571XmL9EvwESk07Lzay8" />
+        <meta-data
+            android:name="com.parse.CLIENT_KEY"
+            android:value="1sJfYdhL6PbpuCnmpvKhbXnfwnCj1tVDobPxmbB4" />
     </application>
 
 </manifest>
