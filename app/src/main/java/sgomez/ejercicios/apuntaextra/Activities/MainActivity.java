@@ -19,6 +19,7 @@ import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.parse.Parse;
 
+import sgomez.ejercicios.apuntaextra.Model.ParseUsuarioRepository;
 import sgomez.ejercicios.apuntaextra.Model.Usuario;
 import sgomez.ejercicios.apuntaextra.R;
 
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity implements
 
 
     public Usuario usuario;
+
+    public ParseUsuarioRepository UsuarioRepository = new ParseUsuarioRepository();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements
             usuario.setCorreo(account.getEmail());
             usuario.setGoogleId(account.getId());
             usuario.setFoto(account.getPhotoUrl());
-
+            usuario.setObjectId(UsuarioRepository.addUsuario(usuario));
 
             updateUI(true);
         } else {
