@@ -206,4 +206,9 @@ public class MainActivity extends AppCompatActivity implements
     public static GoogleApiClient getmGoogleApiClient() {
         return mGoogleApiClient;
     }
+
+    public void buttonAddDataOnClick(View view) {
+        Intent intent = new Intent(this, AddDataActivity.class);
+        startActivity(intent);
+    }
 }

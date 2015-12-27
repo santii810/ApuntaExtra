@@ -10,4 +10,7 @@
     <string name="configuracion">Configuracion</string>
     <string name="cerrarSesion">Cerrar sesion</string>
     <string name="revokeAcces">Quitar acceso</string>
+    <string name="addData">Añadir datos</string>
+    <string name="addLocal">Añadir local</string>
+    <string name="localName">Nombre local</string>
 </resources>

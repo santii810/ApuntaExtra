@@ -18,7 +18,8 @@ import sgomez.ejercicios.apuntaextra.Model.Usuario;
 import sgomez.ejercicios.apuntaextra.R;
 
 
-public class PerfilActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
+public class PerfilActivity extends AppCompatActivity implements
+        GoogleApiClient.OnConnectionFailedListener {
     private TextView nombre;
     private TextView correo;
     private ImageView foto;
@@ -77,5 +78,9 @@ public class PerfilActivity extends AppCompatActivity implements GoogleApiClient
                         finish();
                     }
                 });
+    }
+
+    public void buttonConfiguracionOnClick(View view) {
+        Toast.makeText(this, "Aun no soportado", Toast.LENGTH_SHORT).show();
     }
 }
