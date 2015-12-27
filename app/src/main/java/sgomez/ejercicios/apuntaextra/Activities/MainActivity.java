@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity implements
     private ProgressDialog mProgressDialog;
 
 
-    public Usuario usuario;
-
-    public ParseUsuarioRepository UsuarioRepository = new ParseUsuarioRepository();
+    private static Usuario usuario;
+//REPOSITORIOS
+    private static ParseUsuarioRepository UsuarioRepository = new ParseUsuarioRepository();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -189,5 +189,14 @@ public class MainActivity extends AppCompatActivity implements
     public void buttonPerfilOnClick(View view) {
         Intent intent = new Intent(this, PerfilActivity.class);
         startActivity(intent);
+    }
+
+
+    public static Usuario getUsuario() {
+        return usuario;
+    }
+
+    public static ParseUsuarioRepository getUsuarioRepository() {
+        return UsuarioRepository;
     }
 }
