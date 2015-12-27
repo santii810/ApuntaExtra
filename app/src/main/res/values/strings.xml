@@ -5,4 +5,7 @@
     <string name="loading">Cargando</string>
     <string name="signed_in_fmt">Sesion iniciada</string>
     <string name="perfil">Perfil</string>
+    <string name="nombre">Nombre:</string>
+    <string name="correo">Correo:</string>
+    <string name="configuracion">Configuracion</string>
 </resources>

@@ -186,4 +186,8 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
 
+    public void buttonPerfilOnClick(View view) {
+        Intent intent = new Intent(this, PerfilActivity.class);
+        startActivity(intent);
+    }
 }
