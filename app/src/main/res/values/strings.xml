@@ -4,4 +4,5 @@
     <string name="signed_out">Sesion cerrada</string>
     <string name="loading">Cargando</string>
     <string name="signed_in_fmt">Sesion iniciada</string>
+    <string name="perfil">Perfil</string>
 </resources>
