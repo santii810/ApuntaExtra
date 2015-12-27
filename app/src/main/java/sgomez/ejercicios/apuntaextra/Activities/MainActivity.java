@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements
 
 
     private static Usuario usuario;
-//REPOSITORIOS
+    //REPOSITORIOS
     private static ParseUsuarioRepository UsuarioRepository = new ParseUsuarioRepository();
 
     @Override
@@ -41,9 +41,12 @@ public class MainActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        try {
+            Parse.enableLocalDatastore(this);
+            Parse.initialize(this);
+        } catch (Exception e) {
+        }
 
-        Parse.enableLocalDatastore(this);
-        Parse.initialize(this);
 
         // Button listeners
         findViewById(R.id.sign_in_button).setOnClickListener(new View.OnClickListener() {
