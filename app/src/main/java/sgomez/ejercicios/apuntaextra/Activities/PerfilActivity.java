@@ -64,4 +64,18 @@ public class PerfilActivity extends AppCompatActivity implements GoogleApiClient
     public void onConnectionFailed(ConnectionResult connectionResult) {
         Toast.makeText(this, "Conexion fallida", Toast.LENGTH_SHORT).show();
     }
+
+    public void buttonRevokeAccessOnClick(View view) {
+        revokeAccess();
+    }
+
+    private void revokeAccess() {
+        Auth.GoogleSignInApi.revokeAccess(mGoogleApiClient).setResultCallback(
+                new ResultCallback<Status>() {
+                    @Override
+                    public void onResult(Status status) {
+                        finish();
+                    }
+                });
+    }
 }

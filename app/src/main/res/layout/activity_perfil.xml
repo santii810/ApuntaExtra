@@ -56,10 +56,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="24dp" />
-
             </LinearLayout>
-
-
         </LinearLayout>
 
         <LinearLayout
@@ -73,17 +70,28 @@
                 android:layout_height="wrap_content"
                 android:text="@string/configuracion" />
 
-            <Button
-                android:id="@+id/sign_out_button"
-                android:layout_width="fill_parent"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:onClick="buttonSignOutOnClick"
-                android:text="@string/cerrarSesion" />
+                android:orientation="horizontal">
 
+                <Button
+                    android:id="@+id/sign_out_button"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:onClick="buttonSignOutOnClick"
+                    android:text="@string/cerrarSesion" />
 
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/revokeAcces"
+                    android:onClick="buttonRevokeAccessOnClick"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
         </LinearLayout>
-
     </LinearLayout>
 </RelativeLayout>

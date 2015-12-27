@@ -9,4 +9,5 @@
     <string name="correo">Correo:</string>
     <string name="configuracion">Configuracion</string>
     <string name="cerrarSesion">Cerrar sesion</string>
+    <string name="revokeAcces">Quitar acceso</string>
 </resources>
