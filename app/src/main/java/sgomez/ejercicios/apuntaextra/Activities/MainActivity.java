@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements
 
     private static final String TAG = "SignInActivity";
     private static final int RC_SIGN_IN = 9001;
-    private GoogleApiClient mGoogleApiClient;
+    private static GoogleApiClient mGoogleApiClient;
     private ProgressDialog mProgressDialog;
 
 
@@ -198,5 +198,9 @@ public class MainActivity extends AppCompatActivity implements
 
     public static ParseUsuarioRepository getUsuarioRepository() {
         return UsuarioRepository;
+    }
+
+    public static GoogleApiClient getmGoogleApiClient() {
+        return mGoogleApiClient;
     }
 }
