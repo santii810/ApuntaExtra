@@ -19,6 +19,7 @@ import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.parse.Parse;
 
+import sgomez.ejercicios.apuntaextra.Model.ParseLocalRepository;
 import sgomez.ejercicios.apuntaextra.Model.ParseUsuarioRepository;
 import sgomez.ejercicios.apuntaextra.Model.Usuario;
 import sgomez.ejercicios.apuntaextra.R;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements
     private static Usuario usuario;
     //REPOSITORIOS
     private static ParseUsuarioRepository UsuarioRepository = new ParseUsuarioRepository();
+    private static ParseLocalRepository LocalRepository = new ParseLocalRepository();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -208,7 +210,11 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     public void buttonAddDataOnClick(View view) {
-        Intent intent = new Intent(this, AddDataActivity.class);
-        startActivity(intent);
+        startActivity( new Intent(this, AddDataActivity.class));
+    }
+
+
+    public static ParseLocalRepository getLocalRepository() {
+        return LocalRepository;
     }
 }
