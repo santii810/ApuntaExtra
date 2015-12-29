@@ -1,5 +1,6 @@
 package sgomez.ejercicios.apuntaextra.Activities;
 
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ public class addMapPositionActivity extends FragmentActivity
 
     private GoogleMap mMap;
     private Marker marker;
+    private String addressName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,9 +67,9 @@ public class addMapPositionActivity extends FragmentActivity
         mMap.moveCamera(CameraUpdateFactory.zoomTo(8));
 
         // Add a marker in Sydney and move the camera
-        LatLng pos = new LatLng(42.33578929999999, -7.863880999999992);
+        LatLng pos = new LatLng(42.6026946, -8.6526407);
         marker = mMap.addMarker(new MarkerOptions().
-                position(pos).title("Ourense"));
+                position(pos).title("Caldas de Reis"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(pos));
 
         // Pinchar mapa
@@ -79,7 +81,7 @@ public class addMapPositionActivity extends FragmentActivity
                 Geocoder geocoder = new Geocoder(getBaseContext(),
                         Locale.getDefault());
 
-                String addressName = "";
+                addressName = "";
                 try {
                     List<Address> addresses = geocoder.getFromLocation(
                             latLng.latitude,
@@ -102,16 +104,17 @@ public class addMapPositionActivity extends FragmentActivity
             }
         });
     }
+
     public void searchButtonClicked(View view) {
         EditText addressEditText =
-                (EditText)findViewById(R.id.addressEditText);
+                (EditText) findViewById(R.id.addressEditText);
         String addressName = addressEditText.getText().toString();
 
         Geocoder geoCoder = new Geocoder(this, Locale.getDefault());
         try {
             List<Address> addresses = geoCoder.getFromLocationName(
                     addressName, 1);
-            if(addresses.size() > 0) {
+            if (addresses.size() > 0) {
                 Address address = addresses.get(0);
                 LatLng pos = new LatLng(address.getLatitude(),
                         address.getLongitude());
@@ -124,5 +127,13 @@ public class addMapPositionActivity extends FragmentActivity
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void buttonAddMapOnClick(View view) {
+        Intent backData = new Intent();
+        backData.putExtra("latitude", marker.getPosition().latitude);
+        backData.putExtra("longitude", marker.getPosition().longitude);
+        setResult(RESULT_OK, backData);
+        finish();
     }
 }

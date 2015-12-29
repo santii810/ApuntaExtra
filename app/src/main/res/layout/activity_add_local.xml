@@ -24,13 +24,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <Button
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/direccionEnMaps"
+            android:text="@string/localAddress" />
+
+        <EditText
+            android:id="@+id/editTextLocalAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
             android:id="@+id/buttonMapAddressSelect"
-            android:onClick="buttonMapAdressSelectOnClick"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="buttonMapAdressSelectOnClick"
+            android:text="@string/direccionEnMaps" />
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/addData"
+
+
+            android:background="@color/colorPrimary"
+            android:layout_gravity="right"
+            />
 
     </LinearLayout>
-
 </RelativeLayout>

@@ -14,4 +14,5 @@
     <string name="addLocal">Añadir local</string>
     <string name="localName">Nombre local</string>
     <string name="direccionEnMaps">Seleccionar direccion en Maps</string>
+    <string name="localAddress">Direccion local:</string>
 </resources>

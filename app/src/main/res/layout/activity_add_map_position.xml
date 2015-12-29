@@ -20,6 +20,12 @@
             android:layout_height="wrap_content"
             android:onClick="searchButtonClicked"
             android:src="@android:drawable/ic_menu_search" />
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:onClick="buttonAddMapOnClick"
+            android:src="@drawable/check" />
     </LinearLayout>
 
     <fragment
