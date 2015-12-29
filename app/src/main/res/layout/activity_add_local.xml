@@ -46,10 +46,9 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="@string/addData"
-
-
             android:background="@color/colorPrimary"
             android:layout_gravity="right"
+            android:onClick="buttonAddLocalOnClick"
             />
 
     </LinearLayout>

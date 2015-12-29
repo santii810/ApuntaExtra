@@ -37,4 +37,22 @@ public class AddLocalActivity extends AppCompatActivity {
             }
         }
     }
+
+    public void buttonAddLocalOnClick(View view) {
+        local.setNombre(((EditText) findViewById(R.id.editTextLocalName)).getText().toString());
+        local.setDireccion(((EditText) findViewById(R.id.editTextLocalAddress)).getText().toString());
+        retornarLocal(local);
+
+    }
+
+    private void retornarLocal(Local local) {
+        Intent backData = new Intent();
+        backData.putExtra("nombre", local.getNombre());
+        backData.putExtra("direccion", local.getDireccion());
+        backData.putExtra("latitude", local.getLatitude());
+        backData.putExtra("longitude", local.getLongitude());
+        setResult(RESULT_OK, backData);
+        finish();
+
+    }
 }

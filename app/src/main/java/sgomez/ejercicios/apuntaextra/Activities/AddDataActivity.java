@@ -22,4 +22,15 @@ public class AddDataActivity extends AppCompatActivity {
     public void buttonAddLocalOnClick(View view) {
         startActivityForResult(new Intent(this, AddLocalActivity.class), LOCAL_REQUEST_CODE);
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case LOCAL_REQUEST_CODE:
+
+
+                break;
+        }
+    }
 }
