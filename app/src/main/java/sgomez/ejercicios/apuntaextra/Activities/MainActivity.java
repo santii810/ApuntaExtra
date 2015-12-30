@@ -19,6 +19,7 @@ import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.parse.Parse;
 
+import sgomez.ejercicios.apuntaextra.Model.MemoryRepositories;
 import sgomez.ejercicios.apuntaextra.Model.ParseLocalRepository;
 import sgomez.ejercicios.apuntaextra.Model.ParseUsuarioRepository;
 import sgomez.ejercicios.apuntaextra.Model.Usuario;
@@ -36,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements
     //REPOSITORIOS
     private static ParseUsuarioRepository UsuarioRepository = new ParseUsuarioRepository();
     private static ParseLocalRepository LocalRepository = new ParseLocalRepository();
+    private static MemoryRepositories memoryRepositories = new MemoryRepositories();
+
+
     private ProgressDialog mProgressDialog;
 
     public static Usuario getUsuario() {
@@ -55,6 +59,11 @@ public class MainActivity extends AppCompatActivity implements
         return LocalRepository;
     }
     // [END handleSignInResult]
+
+
+    public static MemoryRepositories getMemoryRepositories() {
+        return memoryRepositories;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
 
+import sgomez.ejercicios.apuntaextra.Adapters.Adapter_simple_spinner;
 import sgomez.ejercicios.apuntaextra.Model.Local;
 import sgomez.ejercicios.apuntaextra.R;
 
@@ -20,6 +22,16 @@ public class AddLocalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_local);
         local = new Local();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Adapter_simple_spinner adapter = new Adapter_simple_spinner(this, R.layout.view_simple_spinner, MainActivity.getMemoryRepositories().getTiposServicioHabitual());
+        Spinner spinner = ((Spinner) findViewById(R.id.spinnerhabitualService));
+        spinner.setAdapter(adapter);
+
     }
 
     public void buttonMapAdressSelectOnClick(View view) {
@@ -55,6 +67,7 @@ public class AddLocalActivity extends AppCompatActivity {
         backData.putExtra("longitude", local.getLongitude());
         setResult(RESULT_OK, backData);
         finish();
-
     }
+
+
 }
