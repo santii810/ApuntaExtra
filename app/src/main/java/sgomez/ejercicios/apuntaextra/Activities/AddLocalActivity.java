@@ -41,6 +41,7 @@ public class AddLocalActivity extends AppCompatActivity {
     public void buttonAddLocalOnClick(View view) {
         local.setNombre(((EditText) findViewById(R.id.editTextLocalName)).getText().toString());
         local.setDireccion(((EditText) findViewById(R.id.editTextLocalAddress)).getText().toString());
+        local.setDescripcion(((EditText) findViewById(R.id.editTextDecription)).getText().toString());
         retornarLocal(local);
 
     }
@@ -49,6 +50,7 @@ public class AddLocalActivity extends AppCompatActivity {
         Intent backData = new Intent();
         backData.putExtra("nombre", local.getNombre());
         backData.putExtra("direccion", local.getDireccion());
+        backData.putExtra("descripcion", local.getDescripcion());
         backData.putExtra("latitude", local.getLatitude());
         backData.putExtra("longitude", local.getLongitude());
         setResult(RESULT_OK, backData);

@@ -5,11 +5,20 @@ package sgomez.ejercicios.apuntaextra.Model;
  */
 public class Local extends Entorno {
     private String Direccion;
+    private String Descripcion;
     private double latitude;
     private double longitude;
 
     public String getDireccion() {
         return Direccion;
+    }
+
+    public String getDescripcion() {
+        return Descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        Descripcion = descripcion;
     }
 
     public void setDireccion(String direccion) {

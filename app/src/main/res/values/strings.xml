@@ -17,4 +17,5 @@
     <string name="localAddress">Direccion local:</string>
     <string name="viewData">Visualizar datos</string>
     <string name="viewLocales">Ver locales</string>
+    <string name="description">Descripcion:</string>
 </resources>

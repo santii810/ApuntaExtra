@@ -33,6 +33,7 @@ public class AddDataActivity extends AppCompatActivity {
                     Local local = new Local();
                     local.setDireccion(data.getStringExtra("direccion"));
                     local.setNombre(data.getStringExtra("nombre"));
+                    local.setDescripcion(data.getStringExtra("descripcion"));
                     local.setLatitude(data.getDoubleExtra("latitude", 0));
                     local.setLongitude(data.getDoubleExtra("longitude", 0));
                     MainActivity.getLocalRepository().addLocal(local);
