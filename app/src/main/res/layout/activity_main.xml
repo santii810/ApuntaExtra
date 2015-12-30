@@ -21,20 +21,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="buttonPerfilOnClick"
-        android:text="@string/perfil" />
+        android:text="@string/perfil"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/buttonAddData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="buttonAddDataOnClick"
-        android:text="@string/addData" />
+        android:text="@string/addData"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/buttonViewData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="buttonViewDataOnClick"
-        android:text="@string/viewData" />
+        android:text="@string/viewData"
+        android:visibility="gone" />
 
 </LinearLayout>
