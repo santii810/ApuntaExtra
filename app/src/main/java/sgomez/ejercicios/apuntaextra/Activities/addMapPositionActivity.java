@@ -23,7 +23,7 @@ import java.util.Locale;
 import sgomez.ejercicios.apuntaextra.R;
 
 
-public class addMapPositionActivity extends FragmentActivity
+public class AddMapPositionActivity extends FragmentActivity
         implements OnMapReadyCallback {
 
     private GoogleMap mMap;

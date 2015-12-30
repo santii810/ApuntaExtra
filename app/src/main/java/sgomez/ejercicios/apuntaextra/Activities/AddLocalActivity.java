@@ -23,7 +23,7 @@ public class AddLocalActivity extends AppCompatActivity {
     }
 
     public void buttonMapAdressSelectOnClick(View view) {
-        startActivityForResult(new Intent(this, addMapPositionActivity.class), GET_MAP_POSITION_REQUEST_CODE);
+        startActivityForResult(new Intent(this, AddMapPositionActivity.class), GET_MAP_POSITION_REQUEST_CODE);
     }
 
 

@@ -30,13 +30,29 @@ public class MainActivity extends AppCompatActivity implements
     private static final String TAG = "SignInActivity";
     private static final int RC_SIGN_IN = 9001;
     private static GoogleApiClient mGoogleApiClient;
-    private ProgressDialog mProgressDialog;
-
-
     private static Usuario usuario;
     //REPOSITORIOS
     private static ParseUsuarioRepository UsuarioRepository = new ParseUsuarioRepository();
     private static ParseLocalRepository LocalRepository = new ParseLocalRepository();
+    private ProgressDialog mProgressDialog;
+
+    public static Usuario getUsuario() {
+        return usuario;
+    }
+
+    public static ParseUsuarioRepository getUsuarioRepository() {
+        return UsuarioRepository;
+    }
+
+    public static GoogleApiClient getmGoogleApiClient() {
+        return mGoogleApiClient;
+    }
+    // [END onActivityResult]
+
+    public static ParseLocalRepository getLocalRepository() {
+        return LocalRepository;
+    }
+    // [END handleSignInResult]
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements
         signInButton.setScopes(gso.getScopeArray());
         // [END customize_button]
     }
+    // [END signIn]
 
     @Override
     public void onStart() {
@@ -127,7 +144,6 @@ public class MainActivity extends AppCompatActivity implements
             handleSignInResult(result);
         }
     }
-    // [END onActivityResult]
 
     // [START handleSignInResult]
     private void handleSignInResult(GoogleSignInResult result) {
@@ -148,14 +164,12 @@ public class MainActivity extends AppCompatActivity implements
             updateUI(false);
         }
     }
-    // [END handleSignInResult]
 
     // [START signIn]
     private void signIn() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
-    // [END signIn]
 
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
@@ -196,29 +210,11 @@ public class MainActivity extends AppCompatActivity implements
         startActivity(intent);
     }
 
-
-    public static Usuario getUsuario() {
-        return usuario;
-    }
-
-    public static ParseUsuarioRepository getUsuarioRepository() {
-        return UsuarioRepository;
-    }
-
-    public static GoogleApiClient getmGoogleApiClient() {
-        return mGoogleApiClient;
-    }
-
     public void buttonAddDataOnClick(View view) {
         startActivity( new Intent(this, AddDataActivity.class));
     }
 
-
-    public static ParseLocalRepository getLocalRepository() {
-        return LocalRepository;
-    }
-
     public void buttonViewDataOnClick(View view) {
-        startActivity(new Intent());
+        startActivity(new Intent(this, ViewDataActivity.class));
     }
 }

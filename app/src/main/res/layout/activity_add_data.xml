@@ -8,17 +8,18 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="sgomez.ejercicios.apuntaextra.Activities.AddDataActivity">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <Button
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/addLocal"
-        android:id="@+id/buttonAddLocal"
-        android:onClick="buttonAddLocalOnClick"
-        />
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/buttonAddLocal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="buttonAddLocalOnClick"
+            android:text="@string/addLocal" />
 
 
-</LinearLayout>
+    </LinearLayout>
 </RelativeLayout>

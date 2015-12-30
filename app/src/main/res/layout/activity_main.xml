@@ -32,11 +32,12 @@
             android:layout_height="wrap_content"
             android:onClick="buttonAddDataOnClick"
             android:text="@string/addData" />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/viewData"
-            android:onClick="buttonViewDataOnClick"/>
+            android:onClick="buttonViewDataOnClick"
+            android:text="@string/viewData" />
 
     </LinearLayout>
 
