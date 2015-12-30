@@ -217,4 +217,8 @@ public class MainActivity extends AppCompatActivity implements
     public static ParseLocalRepository getLocalRepository() {
         return LocalRepository;
     }
+
+    public void buttonViewDataOnClick(View view) {
+        startActivity(new Intent());
+    }
 }

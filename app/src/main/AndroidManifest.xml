@@ -40,6 +40,8 @@
         <activity android:name=".Activities.AddDataActivity" />
         <activity android:name=".Activities.AddLocalActivity" />
         <activity android:name=".Activities.addMapPositionActivity" />
+        <activity android:name=".Activities.ViewDataActivity" />
+        <activity android:name=".Activities.ViewLocalesActivity"></activity>
     </application>
 
 </manifest>

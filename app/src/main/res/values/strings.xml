@@ -15,4 +15,6 @@
     <string name="localName">Nombre local</string>
     <string name="direccionEnMaps">Seleccionar direccion en Maps</string>
     <string name="localAddress">Direccion local:</string>
+    <string name="viewData">Visualizar datos</string>
+    <string name="viewLocales">Ver locales</string>
 </resources>
