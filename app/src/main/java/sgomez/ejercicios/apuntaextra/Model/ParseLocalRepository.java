@@ -8,7 +8,7 @@ import sgomez.ejercicios.apuntaextra.Activities.MainActivity;
  * Created by sgomez on 29/12/2015.
  */
 public class ParseLocalRepository {
-    private final String DBNAME = "Local";
+    private final String DBNAME = "Locales";
     private final String T_ID = "objectId";
     private final String T_NOMBRE = "nombreLocal";
     private final String T_DIRECCION = "direccionLocal";
