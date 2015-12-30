@@ -29,13 +29,15 @@ public class AddDataActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case LOCAL_REQUEST_CODE:
-                Local local = new Local();
-                local.setDireccion(data.getStringExtra("direccion"));
-                local.setNombre(data.getStringExtra("nombre"));
-                local.setLatitude(data.getDoubleExtra("latitude", 0));
-                local.setLongitude(data.getDoubleExtra("longitude", 0));
-                MainActivity.getLocalRepository().addLocal(local);
-                break;
+                if (resultCode == RESULT_OK) {
+                    Local local = new Local();
+                    local.setDireccion(data.getStringExtra("direccion"));
+                    local.setNombre(data.getStringExtra("nombre"));
+                    local.setLatitude(data.getDoubleExtra("latitude", 0));
+                    local.setLongitude(data.getDoubleExtra("longitude", 0));
+                    MainActivity.getLocalRepository().addLocal(local);
+                    break;
+                }
         }
     }
 }

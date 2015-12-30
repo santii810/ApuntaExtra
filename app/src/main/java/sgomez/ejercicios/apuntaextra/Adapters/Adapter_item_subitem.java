@@ -9,19 +9,20 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import sgomez.ejercicios.apuntaextra.Model.Entorno;
 import sgomez.ejercicios.apuntaextra.Model.Local;
 import sgomez.ejercicios.apuntaextra.R;
 
 /**
  * Created by dam209 on 03/12/2015.
  */
-public class LocalAdapter extends BaseAdapter {
+public class Adapter_item_subitem extends BaseAdapter {
 
-    private ArrayList<Local> entradas;
+    private ArrayList<Entorno> entradas;
     private int idView;
     private Context contexto;
 
-    public LocalAdapter(Context context, int IdView, ArrayList<Local> entradas) {
+    public Adapter_item_subitem(Context context, int IdView, ArrayList entradas) {
         super();
         this.contexto = context;
         this.entradas = entradas;
@@ -53,10 +54,12 @@ public class LocalAdapter extends BaseAdapter {
         return convertView;
     }
 
-    public void onEntrada(Local entrada, View view) {
-        TextView titulo = (TextView) view.findViewById(R.id.viewItem);
-        titulo.setText((entrada).getNombre());
-        TextView subTitulo = (TextView) view.findViewById(R.id.viewSubItem);
-        subTitulo.setText((entrada).getDireccion());
+    public void onEntrada(Entorno entrada, View view) {
+        if (entrada instanceof Local) {
+            TextView titulo = (TextView) view.findViewById(R.id.viewItem);
+            titulo.setText((entrada).getNombre());
+            TextView subTitulo = (TextView) view.findViewById(R.id.viewSubItem);
+            subTitulo.setText(((Local) (entrada)).getDireccion());
+        }
     }
 }

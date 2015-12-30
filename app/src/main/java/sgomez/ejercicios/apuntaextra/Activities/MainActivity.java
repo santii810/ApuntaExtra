@@ -195,13 +195,24 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
 
+    /**
+     * Comprueba, mediante el parametro asignado, si estas logeado.
+     * En caso afirmativo muestra los botones ocultos y oculta el boton de sign in.
+     * En caso negrativo hace lo contrario
+     *
+     * @param signedIn boleano que representa si esta o no autenticado
+     */
     private void updateUI(boolean signedIn) {
         if (signedIn) {
             findViewById(R.id.sign_in_button).setVisibility(View.GONE);
             findViewById(R.id.buttonPerfil).setVisibility(View.VISIBLE);
+            findViewById(R.id.buttonAddData).setVisibility(View.VISIBLE);
+            findViewById(R.id.buttonViewData).setVisibility(View.VISIBLE);
         } else {
             findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
             findViewById(R.id.buttonPerfil).setVisibility(View.GONE);
+            findViewById(R.id.buttonAddData).setVisibility(View.GONE);
+            findViewById(R.id.buttonViewData).setVisibility(View.GONE);
         }
     }
 
@@ -211,7 +222,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     public void buttonAddDataOnClick(View view) {
-        startActivity( new Intent(this, AddDataActivity.class));
+        startActivity(new Intent(this, AddDataActivity.class));
     }
 
     public void buttonViewDataOnClick(View view) {

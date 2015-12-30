@@ -6,7 +6,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-import sgomez.ejercicios.apuntaextra.Adapters.LocalAdapter;
+import sgomez.ejercicios.apuntaextra.Adapters.Adapter_item_subitem;
 import sgomez.ejercicios.apuntaextra.Model.Local;
 import sgomez.ejercicios.apuntaextra.R;
 
@@ -25,7 +25,8 @@ public class ViewLocalesActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         locales = MainActivity.getLocalRepository().getLocales();
-        ((ListView) findViewById(R.id.listViewViewLocales)).setAdapter(new LocalAdapter(this, R.layout.view_item_subitem, locales));
+        ((ListView) findViewById(R.id.listViewViewLocales)).setAdapter(
+                new Adapter_item_subitem(this, R.layout.view_item_subitem, locales));
         super.onResume();
     }
 }
