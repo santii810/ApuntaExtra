@@ -21,6 +21,7 @@ public class ParseLocalRepository {
     private final String T_LONGITUDE = "longitude";
     private final String T_INSERCION = "insertadoPor";
     private final String T_DESCRIPCION = "Descripcion";
+    private final String T_SERVICIO_HABITUAL = "ServicioHabitual";
 
     public void addLocal(Local local) {
         ParseObject parseObject = new ParseObject(DBNAME);
@@ -29,7 +30,9 @@ public class ParseLocalRepository {
         parseObject.put(T_DESCRIPCION, local.getDescripcion());
         parseObject.put(T_LATITUDE, local.getLatitude());
         parseObject.put(T_LONGITUDE, local.getLongitude());
+        parseObject.put(T_SERVICIO_HABITUAL, local.getTrabajoHabitual());
         parseObject.put(T_INSERCION, MainActivity.getUsuario().getObjectId());
+        parseObject.put();
         parseObject.saveInBackground();
     }
 
