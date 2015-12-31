@@ -32,7 +32,7 @@ public class ParseLocalRepository {
         parseObject.put(T_LONGITUDE, local.getLongitude());
         parseObject.put(T_SERVICIO_HABITUAL, local.getTrabajoHabitual());
         parseObject.put(T_INSERCION, MainActivity.getUsuario().getObjectId());
-        parseObject.put();
+        
         parseObject.saveInBackground();
     }
 
