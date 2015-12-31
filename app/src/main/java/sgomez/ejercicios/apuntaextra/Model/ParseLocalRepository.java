@@ -59,6 +59,8 @@ public class ParseLocalRepository {
         local.setDireccion(result.getString(T_DIRECCION));
         local.setLatitude(result.getDouble(T_LATITUDE));
         local.setLongitude(result.getDouble(T_LONGITUDE));
+        local.setDescripcion(result.getString(T_DESCRIPCION));
+        local.setTrabajoHabitual(result.getString(T_SERVICIO_HABITUAL));
         return local;
     }
 }
