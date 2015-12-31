@@ -54,6 +54,7 @@ public class AddLocalActivity extends AppCompatActivity {
         local.setNombre(((EditText) findViewById(R.id.editTextLocalName)).getText().toString());
         local.setDireccion(((EditText) findViewById(R.id.editTextLocalAddress)).getText().toString());
         local.setDescripcion(((EditText) findViewById(R.id.editTextDecription)).getText().toString());
+        local.setTrabajoHabitual(((Spinner)findViewById(R.id.spinnerhabitualService)).getSelectedItem().toString());
         retornarLocal(local);
 
     }
@@ -65,6 +66,7 @@ public class AddLocalActivity extends AppCompatActivity {
         backData.putExtra("descripcion", local.getDescripcion());
         backData.putExtra("latitude", local.getLatitude());
         backData.putExtra("longitude", local.getLongitude());
+        backData.putExtra("trabajoHabitual", local.getTrabajoHabitual());
         setResult(RESULT_OK, backData);
         finish();
     }

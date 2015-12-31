@@ -36,6 +36,7 @@ public class AddDataActivity extends AppCompatActivity {
                     local.setDescripcion(data.getStringExtra("descripcion"));
                     local.setLatitude(data.getDoubleExtra("latitude", 0));
                     local.setLongitude(data.getDoubleExtra("longitude", 0));
+                    local.setTrabajoHabitual(data.getStringExtra("trabajoHabitual"));
                     MainActivity.getLocalRepository().addLocal(local);
                     break;
                 }
