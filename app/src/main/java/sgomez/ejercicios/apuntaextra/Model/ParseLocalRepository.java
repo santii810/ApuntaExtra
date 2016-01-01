@@ -22,18 +22,22 @@ public class ParseLocalRepository {
     private final String T_DESCRIPCION = "Descripcion";
     private final String T_SERVICIO_HABITUAL = "ServicioHabitual";
 
-    public void addLocal(Local local) {
-        ParseObject parseObject = new ParseObject(DBNAME);
-        parseObject.put(T_NOMBRE, local.getNombre());
-        parseObject.put(T_DIRECCION, local.getDireccion());
-        parseObject.put(T_DESCRIPCION, local.getDescripcion());
-        parseObject.put(T_LATITUDE, local.getLatitude());
-        parseObject.put(T_LONGITUDE, local.getLongitude());
-        parseObject.put(T_SERVICIO_HABITUAL, local.getTrabajoHabitual());
-        parseObject.put(T_INSERCION, MainActivity.getUsuario().getObjectId());
-        parseObject.saveInBackground();
+    public boolean addLocal(Local local) {
+        if (existeLocal(local.getNombre()))
+            return false;
+        else {
+            ParseObject parseObject = new ParseObject(DBNAME);
+            parseObject.put(T_NOMBRE, local.getNombre());
+            parseObject.put(T_DIRECCION, local.getDireccion());
+            parseObject.put(T_DESCRIPCION, local.getDescripcion());
+            parseObject.put(T_LATITUDE, local.getLatitude());
+            parseObject.put(T_LONGITUDE, local.getLongitude());
+            parseObject.put(T_SERVICIO_HABITUAL, local.getTrabajoHabitual());
+            parseObject.put(T_INSERCION, MainActivity.getUsuario().getObjectId());
+            parseObject.saveInBackground();
+            return true;
+        }
     }
-
 
     public ArrayList<Local> getLocales() {
         ArrayList<Local> locales = new ArrayList<>();
@@ -60,5 +64,17 @@ public class ParseLocalRepository {
         local.setDescripcion(result.getString(T_DESCRIPCION));
         local.setTrabajoHabitual(result.getString(T_SERVICIO_HABITUAL));
         return local;
+    }
+
+
+    private boolean existeLocal(String nombreLocal) {
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
+        query.whereEqualTo(T_NOMBRE, nombreLocal);
+        try {
+            return query.find().size() > 0;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return true;
     }
 }

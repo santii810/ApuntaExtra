@@ -53,26 +53,19 @@ public class AddLocalActivity extends AppCompatActivity {
 
     public void buttonAddLocalOnClick(View view) {
         if (((EditText) findViewById(R.id.editTextLocalName)).getText().toString().equals("")) {
-            Toast.makeText(this,"Debes escribir un nombre de local",Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Debes escribir un nombre de local", Toast.LENGTH_LONG).show();
         } else {
             local.setNombre(((EditText) findViewById(R.id.editTextLocalName)).getText().toString());
             local.setDireccion(((EditText) findViewById(R.id.editTextLocalAddress)).getText().toString());
             local.setDescripcion(((EditText) findViewById(R.id.editTextDecription)).getText().toString());
             local.setTrabajoHabitual(((Spinner) findViewById(R.id.spinnerhabitualService)).getSelectedItem().toString());
-            retornarLocal(local);
+            if (MainActivity.getLocalRepository().addLocal(local)) {
+                setResult(RESULT_OK);
+                finish();
+            } else {
+                Toast.makeText(this, "El nombre de local a insertar ya existe", Toast.LENGTH_LONG).show();
+            }
         }
-    }
-
-    private void retornarLocal(Local local) {
-        Intent backData = new Intent();
-        backData.putExtra("nombre", local.getNombre());
-        backData.putExtra("direccion", local.getDireccion());
-        backData.putExtra("descripcion", local.getDescripcion());
-        backData.putExtra("latitude", local.getLatitude());
-        backData.putExtra("longitude", local.getLongitude());
-        backData.putExtra("trabajoHabitual", local.getTrabajoHabitual());
-        setResult(RESULT_OK, backData);
-        finish();
     }
 
 
