@@ -14,7 +14,6 @@ import sgomez.ejercicios.apuntaextra.Activities.MainActivity;
  */
 public class ParseLocalRepository {
     private final String DBNAME = "Locales";
-    private final String T_ID = "objectId";
     private final String T_NOMBRE = "nombreLocal";
     private final String T_DIRECCION = "direccionLocal";
     private final String T_LATITUDE = "latitude";
@@ -32,7 +31,6 @@ public class ParseLocalRepository {
         parseObject.put(T_LONGITUDE, local.getLongitude());
         parseObject.put(T_SERVICIO_HABITUAL, local.getTrabajoHabitual());
         parseObject.put(T_INSERCION, MainActivity.getUsuario().getObjectId());
-        
         parseObject.saveInBackground();
     }
 

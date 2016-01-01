@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import sgomez.ejercicios.apuntaextra.Adapters.Adapter_simple_spinner;
 import sgomez.ejercicios.apuntaextra.Model.Local;
@@ -51,12 +52,15 @@ public class AddLocalActivity extends AppCompatActivity {
     }
 
     public void buttonAddLocalOnClick(View view) {
-        local.setNombre(((EditText) findViewById(R.id.editTextLocalName)).getText().toString());
-        local.setDireccion(((EditText) findViewById(R.id.editTextLocalAddress)).getText().toString());
-        local.setDescripcion(((EditText) findViewById(R.id.editTextDecription)).getText().toString());
-        local.setTrabajoHabitual(((Spinner)findViewById(R.id.spinnerhabitualService)).getSelectedItem().toString());
-        retornarLocal(local);
-
+        if (((EditText) findViewById(R.id.editTextLocalName)).getText().toString().equals("")) {
+            Toast.makeText(this,"Debes escribir un nombre de local",Toast.LENGTH_LONG).show();
+        } else {
+            local.setNombre(((EditText) findViewById(R.id.editTextLocalName)).getText().toString());
+            local.setDireccion(((EditText) findViewById(R.id.editTextLocalAddress)).getText().toString());
+            local.setDescripcion(((EditText) findViewById(R.id.editTextDecription)).getText().toString());
+            local.setTrabajoHabitual(((Spinner) findViewById(R.id.spinnerhabitualService)).getSelectedItem().toString());
+            retornarLocal(local);
+        }
     }
 
     private void retornarLocal(Local local) {
