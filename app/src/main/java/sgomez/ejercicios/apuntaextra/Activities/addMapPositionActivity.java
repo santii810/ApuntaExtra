@@ -1,12 +1,16 @@
 package sgomez.ejercicios.apuntaextra.Activities;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -41,6 +45,9 @@ public class AddMapPositionActivity extends FragmentActivity
                 (SupportMapFragment) getSupportFragmentManager()
                         .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
+
     }
 
 
@@ -71,6 +78,15 @@ public class AddMapPositionActivity extends FragmentActivity
         marker = mMap.addMarker(new MarkerOptions().
                 position(pos).title("Caldas de Reis"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(pos));
+
+
+        //Activar localizacion
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            mMap.setMyLocationEnabled(true);
+        }
+
+
 
         // Pinchar mapa
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
