@@ -1,16 +1,19 @@
 package sgomez.ejercicios.apuntaextra.Activities;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -47,7 +50,6 @@ public class AddMapPositionActivity extends FragmentActivity
         mapFragment.getMapAsync(this);
 
 
-
     }
 
 
@@ -78,8 +80,6 @@ public class AddMapPositionActivity extends FragmentActivity
         marker = mMap.addMarker(new MarkerOptions().
                 position(pos).title("Caldas de Reis"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(pos));
-
-
         //Activar localizacion
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
@@ -87,6 +87,21 @@ public class AddMapPositionActivity extends FragmentActivity
         }
 
 
+        mMap.setOnMyLocationButtonClickListener(new GoogleMap.OnMyLocationButtonClickListener() {
+
+            @Override
+            public boolean onMyLocationButtonClick() {
+
+                LocationManager locManager =
+                        (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                if (!locManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+                    mostrarAvisoGpsDeshabilitado();
+                }
+
+
+                return false;
+            }
+        });
 
         // Pinchar mapa
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
@@ -119,6 +134,22 @@ public class AddMapPositionActivity extends FragmentActivity
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
             }
         });
+    }
+
+    private void mostrarAvisoGpsDeshabilitado() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Para obtener tu obicacion GPS debes tener el gps activado." +
+                " Esta característica se activa en \"Ajustes/Personal/Ubicacion\"")
+                .setTitle("GPS desactivado")
+                .setCancelable(false)
+                .setNeutralButton("Aceptar",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
     public void searchButtonClicked(View view) {
