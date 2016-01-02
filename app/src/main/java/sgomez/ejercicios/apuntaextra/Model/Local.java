@@ -8,7 +8,7 @@ public class Local extends Entorno {
     private String Descripcion;
     private double latitude;
     private double longitude;
-    private String TrabajoHabitual;
+    private String ServicioHabitual;
 
     public String getDireccion() {
         return Direccion;
@@ -42,11 +42,11 @@ public class Local extends Entorno {
         this.longitude = longitude;
     }
 
-    public String getTrabajoHabitual() {
-        return TrabajoHabitual;
+    public String getServicioHabitual() {
+        return ServicioHabitual;
     }
 
-    public void setTrabajoHabitual(String trabajoHabitual) {
-        TrabajoHabitual = trabajoHabitual;
+    public void setServicioHabitual(String servicioHabitual) {
+        ServicioHabitual = servicioHabitual;
     }
 }

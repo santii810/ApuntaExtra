@@ -70,7 +70,7 @@ public class AddLocalActivity extends AppCompatActivity {
                     local.setNombre(((EditText) findViewById(R.id.editTextLocalName)).getText().toString());
                     local.setDireccion(((EditText) findViewById(R.id.editTextLocalAddress)).getText().toString());
                     local.setDescripcion(((EditText) findViewById(R.id.editTextDecription)).getText().toString());
-                    local.setTrabajoHabitual(((Spinner) findViewById(R.id.spinnerhabitualService)).getSelectedItem().toString());
+                    local.setServicioHabitual(((Spinner) findViewById(R.id.spinnerhabitualService)).getSelectedItem().toString());
                     if (MainActivity.getLocalRepository().addLocal(local)) {
                         setResult(RESULT_OK);
                         finish();

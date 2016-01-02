@@ -33,7 +33,7 @@ public class ParseLocalRepository {
             parseObject.put(T_DESCRIPCION, local.getDescripcion());
             parseObject.put(T_LATITUDE, local.getLatitude());
             parseObject.put(T_LONGITUDE, local.getLongitude());
-            parseObject.put(T_SERVICIO_HABITUAL, local.getTrabajoHabitual());
+            parseObject.put(T_SERVICIO_HABITUAL, local.getServicioHabitual());
             parseObject.put(T_INSERCION, MainActivity.getUsuario().getObjectId());
             parseObject.saveInBackground();
             return true;
@@ -59,6 +59,7 @@ public class ParseLocalRepository {
         query.whereEqualTo(T_ID, objectId);
         try {
             List<ParseObject> result = query.find();
+//            if (result.size() > 0) return null;
             return rellenaLocal(result.get(0));
         } catch (ParseException e) {
             e.printStackTrace();
@@ -75,7 +76,7 @@ public class ParseLocalRepository {
         local.setLatitude(result.getDouble(T_LATITUDE));
         local.setLongitude(result.getDouble(T_LONGITUDE));
         local.setDescripcion(result.getString(T_DESCRIPCION));
-        local.setTrabajoHabitual(result.getString(T_SERVICIO_HABITUAL));
+        local.setServicioHabitual(result.getString(T_SERVICIO_HABITUAL));
         return local;
     }
 

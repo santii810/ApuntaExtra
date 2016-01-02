@@ -23,6 +23,6 @@ public class ViewLocalDataActivity extends AppCompatActivity {
         ((EditText) findViewById(R.id.editTextLocalName)).setText(local.getNombre());
         ((EditText) findViewById(R.id.editTextLocalAddress)).setText(local.getDireccion());
         ((EditText) findViewById(R.id.editTextDecription)).setText(local.getDescripcion());
-        ((TextView) findViewById(R.id.textViewServicioHabitual)).setText(local.getTrabajoHabitual());
+        ((TextView) findViewById(R.id.textViewServicioHabitual)).setText(local.getServicioHabitual());
     }
 }
