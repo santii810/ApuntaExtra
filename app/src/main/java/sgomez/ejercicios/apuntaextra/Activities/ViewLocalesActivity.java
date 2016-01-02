@@ -32,7 +32,7 @@ public class ViewLocalesActivity extends AppCompatActivity {
 
         locales = MainActivity.getLocalRepository().getLocales();
         listViewLocales.setAdapter(
-                new Adapter_item_subitem(this, R.layout.view_item_subitem, locales));
+                new Adapter_item_subitem(this, locales));
 
 
         listViewLocales.setOnItemClickListener(new AdapterView.OnItemClickListener() {

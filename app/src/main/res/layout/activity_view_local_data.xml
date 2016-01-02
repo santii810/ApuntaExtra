@@ -19,8 +19,13 @@
     <EditText
         android:id="@+id/editTextLocalName"
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:editable="false"
         android:layout_height="wrap_content" />
+=======
+        android:layout_height="wrap_content"
+        android:editable="false" />
+>>>>>>> Probas
 
     <TextView
         android:layout_width="match_parent"
@@ -30,8 +35,13 @@
     <EditText
         android:id="@+id/editTextLocalAddress"
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:editable="false"
         android:layout_height="wrap_content" />
+=======
+        android:layout_height="wrap_content"
+        android:editable="false" />
+>>>>>>> Probas
 
     <TextView
         android:layout_width="match_parent"
@@ -43,6 +53,7 @@
         android:layout_width="match_parent"
         android:editable="false"
         android:layout_height="wrap_content"
+        android:editable="false"
         android:inputType="textMultiLine" />
 
     <TextView

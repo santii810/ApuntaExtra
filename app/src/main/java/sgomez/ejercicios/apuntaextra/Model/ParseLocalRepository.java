@@ -14,7 +14,7 @@ import sgomez.ejercicios.apuntaextra.Activities.MainActivity;
  */
 public class ParseLocalRepository {
     private final String DBNAME = "Locales";
-    private final String T_ID = "ObjectId";
+    private final String T_ID = "objectId";
     private final String T_NOMBRE = "nombreLocal";
     private final String T_DIRECCION = "direccionLocal";
     private final String T_LATITUDE = "latitude";
@@ -43,6 +43,7 @@ public class ParseLocalRepository {
     public ArrayList<Local> getLocales() {
         ArrayList<Local> locales = new ArrayList<>();
         ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
+        query.orderByAscending(T_NOMBRE);
         try {
             List<ParseObject> result = query.find();
             for (ParseObject object : result) {

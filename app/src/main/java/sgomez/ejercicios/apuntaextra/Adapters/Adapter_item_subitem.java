@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -16,27 +16,27 @@ import sgomez.ejercicios.apuntaextra.R;
 /**
  * Created by dam209 on 03/12/2015.
  */
-public class Adapter_item_subitem extends BaseAdapter {
+public class Adapter_item_subitem extends ArrayAdapter {
 
-    private ArrayList<Entorno> entradas;
+    private ArrayList<Entorno> datos;
     private int idView;
-    private Context contexto;
+    private Context context;
 
-    public Adapter_item_subitem(Context context, int IdView, ArrayList entradas) {
-        super();
-        this.contexto = context;
-        this.entradas = entradas;
-        this.idView = IdView;
+    public Adapter_item_subitem(Context context,  ArrayList entradas) {
+        super(context, R.layout.view_item_subitem, entradas);
+        this.context = context;
+        this.datos = entradas;
+
     }
 
     @Override
     public int getCount() {
-        return entradas.size();
+        return datos.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return entradas.get(position);
+        return datos.get(position);
     }
 
     @Override
@@ -46,12 +46,10 @@ public class Adapter_item_subitem extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            LayoutInflater vi = (LayoutInflater) contexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = vi.inflate(idView, null);
-            onEntrada(entradas.get(position), convertView);
-        }
-        return convertView;
+            LayoutInflater inflater = LayoutInflater.from(context);
+            View item = inflater.inflate(R.layout.view_item_subitem, null);
+            onEntrada(datos.get(position), item);
+        return item;
     }
 
     public void onEntrada(Entorno entrada, View view) {
