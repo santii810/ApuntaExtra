@@ -34,5 +34,9 @@ public class AddDataActivity extends AppCompatActivity {
                 break;
         }
     }
+
+    public void buttonAddCamareroOnClick(View view) {
+        startActivity(new Intent(this, AddCamareroActivity.class));
+    }
 }
 

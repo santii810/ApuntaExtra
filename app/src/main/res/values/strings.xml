@@ -19,4 +19,9 @@
     <string name="viewLocales">Ver locales</string>
     <string name="description">Descripcion:</string>
     <string name="save">Guardar</string>
+    <string name="addCamarero">Añadir Camarero</string>
+    <string name="camareroName">Nombre camarero:</string>
+    <string name="camareroAddress">Direccion camarero:</string>
+    <string name="active">Activo</string>
+    <string name="unactive">Desactivo</string>
 </resources>

@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="sgomez.ejercicios.apuntaextra.Activities.AddDataActivity">
 
-    <LinearLayout
+
+    <Button
+        android:id="@+id/buttonAddLocal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:onClick="buttonAddLocalOnClick"
+        android:text="@string/addLocal" />
 
-        <Button
-            android:id="@+id/buttonAddLocal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="buttonAddLocalOnClick"
-            android:text="@string/addLocal" />
+    <Button
+        android:id="@+id/buttonAddCamarero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonAddCamareroOnClick"
+        android:text="@string/addCamarero" />
 
 
-    </LinearLayout>
-</RelativeLayout>
+</LinearLayout>
