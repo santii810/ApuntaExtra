@@ -14,6 +14,7 @@ import sgomez.ejercicios.apuntaextra.Activities.MainActivity;
  */
 public class ParseLocalRepository {
     private final String DBNAME = "Locales";
+    private final String T_ID = "ObjectId";
     private final String T_NOMBRE = "nombreLocal";
     private final String T_DIRECCION = "direccionLocal";
     private final String T_LATITUDE = "latitude";
@@ -51,6 +52,18 @@ public class ParseLocalRepository {
             e.printStackTrace();
         }
         return locales;
+    }
+
+    public Local getLocal(String objectId) {
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
+        query.whereEqualTo(T_ID, objectId);
+        try {
+            List<ParseObject> result = query.find();
+            return rellenaLocal(result.get(0));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 

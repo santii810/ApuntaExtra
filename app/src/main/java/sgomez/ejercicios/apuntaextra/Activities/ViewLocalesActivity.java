@@ -1,7 +1,10 @@
 package sgomez.ejercicios.apuntaextra.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -11,7 +14,7 @@ import sgomez.ejercicios.apuntaextra.Model.Local;
 import sgomez.ejercicios.apuntaextra.R;
 
 public class ViewLocalesActivity extends AppCompatActivity {
-
+    private ListView listViewLocales = ((ListView) findViewById(R.id.listViewViewLocales));
     private ArrayList<Local> locales;
 
     @Override
@@ -24,9 +27,24 @@ public class ViewLocalesActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
-        locales = MainActivity.getLocalRepository().getLocales();
-        ((ListView) findViewById(R.id.listViewViewLocales)).setAdapter(
-                new Adapter_item_subitem(this, R.layout.view_item_subitem, locales));
         super.onResume();
+
+        locales = MainActivity.getLocalRepository().getLocales();
+        listViewLocales.setAdapter(
+                new Adapter_item_subitem(this, R.layout.view_item_subitem, locales));
+
+
+        listViewLocales.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Local local = locales.get(position);
+                Intent intent = new Intent(getBaseContext(), ViewLocalDataActivity.class);
+                intent.putExtra("objectId", local.getObjectId());
+                startActivity(intent);
+
+            }
+        });
+
     }
+
 }

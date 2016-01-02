@@ -41,7 +41,8 @@
         <activity android:name=".Activities.AddLocalActivity" />
         <activity android:name=".Activities.AddMapPositionActivity" />
         <activity android:name=".Activities.ViewDataActivity" />
-        <activity android:name=".Activities.ViewLocalesActivity"></activity>
+        <activity android:name=".Activities.ViewLocalesActivity" />
+        <activity android:name=".Activities.ViewLocalDataActivity"></activity>
     </application>
 
 </manifest>
