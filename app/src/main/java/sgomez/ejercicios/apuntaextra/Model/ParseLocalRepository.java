@@ -43,6 +43,7 @@ public class ParseLocalRepository {
     public ArrayList<Local> getLocales() {
         ArrayList<Local> locales = new ArrayList<>();
         ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
+        query.orderByAscending(T_NOMBRE);
         try {
             List<ParseObject> result = query.find();
             for (ParseObject object : result) {
