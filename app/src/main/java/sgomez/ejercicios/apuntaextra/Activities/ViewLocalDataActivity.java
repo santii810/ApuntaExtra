@@ -17,7 +17,7 @@ public class ViewLocalDataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_local_data);
 
-        String objectId = getIntent().getStringExtra("ObjectId");
+        String objectId = getIntent().getStringExtra("objectId");
         local = MainActivity.getLocalRepository().getLocal(objectId);
 
         ((EditText) findViewById(R.id.editTextLocalName)).setText(local.getNombre());
