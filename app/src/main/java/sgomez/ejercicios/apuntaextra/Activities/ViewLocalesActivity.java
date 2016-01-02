@@ -23,7 +23,7 @@ public class ViewLocalesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_locales);
 
         locales = new ArrayList<>();
-        listViewLocales = ((ListView) findViewById(R.id.listViewViewLocales));jajaja
+        listViewLocales = ((ListView) findViewById(R.id.listViewViewLocales));
     }
 
     @Override

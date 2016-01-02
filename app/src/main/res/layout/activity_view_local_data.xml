@@ -13,11 +13,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:text="@string/localName" />
 
     <EditText
         android:id="@+id/editTextLocalName"
         android:layout_width="match_parent"
+        android:editable="false"
         android:layout_height="wrap_content" />
 
     <TextView
@@ -28,6 +30,7 @@
     <EditText
         android:id="@+id/editTextLocalAddress"
         android:layout_width="match_parent"
+        android:editable="false"
         android:layout_height="wrap_content" />
 
     <TextView
@@ -38,6 +41,7 @@
     <EditText
         android:id="@+id/editTextDecription"
         android:layout_width="match_parent"
+        android:editable="false"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine" />
 
