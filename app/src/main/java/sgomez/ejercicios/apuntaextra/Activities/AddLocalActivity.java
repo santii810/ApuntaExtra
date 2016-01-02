@@ -53,23 +53,6 @@ public class AddLocalActivity extends AppCompatActivity {
         }
     }
 
-    public void buttonAddLocalOnClick(View view) {
-        if (((EditText) findViewById(R.id.editTextLocalName)).getText().toString().equals("")) {
-            Toast.makeText(this, "Debes escribir un nombre de local", Toast.LENGTH_LONG).show();
-        } else {
-            local.setNombre(((EditText) findViewById(R.id.editTextLocalName)).getText().toString());
-            local.setDireccion(((EditText) findViewById(R.id.editTextLocalAddress)).getText().toString());
-            local.setDescripcion(((EditText) findViewById(R.id.editTextDecription)).getText().toString());
-            local.setTrabajoHabitual(((Spinner) findViewById(R.id.spinnerhabitualService)).getSelectedItem().toString());
-            if (MainActivity.getLocalRepository().addLocal(local)) {
-                setResult(RESULT_OK);
-                finish();
-            } else {
-                Toast.makeText(this, "El nombre de local a insertar ya existe", Toast.LENGTH_LONG).show();
-            }
-        }
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

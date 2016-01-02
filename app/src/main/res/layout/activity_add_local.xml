@@ -65,14 +65,5 @@
             android:layout_gravity="center"
             android:onClick="buttonMapAdressSelectOnClick"
             android:text="@string/direccionEnMaps" />
-
-        <Button
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:background="@color/colorPrimary"
-            android:onClick="buttonAddLocalOnClick"
-            android:text="@string/addData" />
-
     </LinearLayout>
 </RelativeLayout>
