@@ -18,4 +18,5 @@
     <string name="viewData">Visualizar datos</string>
     <string name="viewLocales">Ver locales</string>
     <string name="description">Descripcion:</string>
+    <string name="save">Guardar</string>
 </resources>
