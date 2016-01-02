@@ -14,7 +14,7 @@ import sgomez.ejercicios.apuntaextra.Model.Local;
 import sgomez.ejercicios.apuntaextra.R;
 
 public class ViewLocalesActivity extends AppCompatActivity {
-    private ListView listViewLocales = ((ListView) findViewById(R.id.listViewViewLocales));
+    private ListView listViewLocales ;
     private ArrayList<Local> locales;
 
     @Override
@@ -23,6 +23,7 @@ public class ViewLocalesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_locales);
 
         locales = new ArrayList<>();
+        listViewLocales = ((ListView) findViewById(R.id.listViewViewLocales));jajaja
     }
 
     @Override
