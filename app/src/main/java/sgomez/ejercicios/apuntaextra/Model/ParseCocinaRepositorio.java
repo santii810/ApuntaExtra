@@ -10,7 +10,7 @@ import sgomez.ejercicios.apuntaextra.Activities.MainActivity;
  * Created by sgomez on 03/01/2016.
  */
 public class ParseCocinaRepositorio {
-    private final String DBNAME = "Cocinas";
+    private final String DBNAME = "Cocina";
     private final String T_ID = "objectId";
     private final String T_NOMBRE = "nombreCocina";
     private final String T_DIRECCION = "direccionCocina";

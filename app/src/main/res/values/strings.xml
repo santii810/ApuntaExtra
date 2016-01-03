@@ -25,4 +25,6 @@
     <string name="active">Activo</string>
     <string name="unactive">Desactivo</string>
     <string name="addCocina">Añadir cocina</string>
+    <string name="cocinaAddress">Direccion cocina:</string>
+    <string name="cocinaName">Nombre cocina</string>
 </resources>

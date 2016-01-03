@@ -19,7 +19,6 @@ public class AddCamareroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_camarero);
         camarero = new Camarero();
-
     }
 
     @Override
@@ -44,7 +43,7 @@ public class AddCamareroActivity extends AppCompatActivity {
                         setResult(RESULT_OK);
                         finish();
                     } else {
-                        Toast.makeText(this, "El nombre de local a insertar ya existe", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "El nombre de camarero a insertar ya existe", Toast.LENGTH_LONG).show();
                     }
 
                 }

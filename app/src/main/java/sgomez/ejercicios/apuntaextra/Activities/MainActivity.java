@@ -21,6 +21,7 @@ import com.parse.Parse;
 
 import sgomez.ejercicios.apuntaextra.Model.MemoryRepositories;
 import sgomez.ejercicios.apuntaextra.Model.ParseCamareroRepository;
+import sgomez.ejercicios.apuntaextra.Model.ParseCocinaRepositorio;
 import sgomez.ejercicios.apuntaextra.Model.ParseLocalRepository;
 import sgomez.ejercicios.apuntaextra.Model.ParseUsuarioRepository;
 import sgomez.ejercicios.apuntaextra.Model.Usuario;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements
     private static ParseUsuarioRepository UsuarioRepository = new ParseUsuarioRepository();
     private static ParseLocalRepository LocalRepository = new ParseLocalRepository();
     private static ParseCamareroRepository CamareroRepository = new ParseCamareroRepository();
+    private static ParseCocinaRepositorio CocinaRepository = new ParseCocinaRepositorio();
     private static MemoryRepositories memoryRepositories = new MemoryRepositories();
 
 
@@ -240,6 +242,10 @@ public class MainActivity extends AppCompatActivity implements
 
     public void buttonViewDataOnClick(View view) {
         startActivity(new Intent(this, ViewDataActivity.class));
+    }
+
+    public static ParseCocinaRepositorio getCocinaRepository() {
+        return CocinaRepository;
     }
 
     public static ParseCamareroRepository getCamareroRepository() {
