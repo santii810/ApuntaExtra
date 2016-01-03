@@ -7,6 +7,16 @@ public class Entorno {
     private String ObjectId;
     private String Nombre;
     private boolean Activo;
+    private String Direccion;
+
+
+    public String getDireccion() {
+        return Direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        Direccion = direccion;
+    }
 
     public String getObjectId() {
         return ObjectId;

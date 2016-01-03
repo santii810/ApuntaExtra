@@ -4,15 +4,10 @@ package sgomez.ejercicios.apuntaextra.Model;
  * Created by sgomez on 28/12/2015.
  */
 public class Local extends Entorno {
-    private String Direccion;
     private String Descripcion;
     private double latitude;
     private double longitude;
     private String ServicioHabitual;
-
-    public String getDireccion() {
-        return Direccion;
-    }
 
     public String getDescripcion() {
         return Descripcion;
@@ -20,10 +15,6 @@ public class Local extends Entorno {
 
     public void setDescripcion(String descripcion) {
         Descripcion = descripcion;
-    }
-
-    public void setDireccion(String direccion) {
-        Direccion = direccion;
     }
 
     public double getLatitude() {
