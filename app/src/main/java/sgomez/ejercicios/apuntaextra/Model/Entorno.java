@@ -6,6 +6,7 @@ package sgomez.ejercicios.apuntaextra.Model;
 public class Entorno {
     private String ObjectId;
     private String Nombre;
+    private boolean Activo;
 
     public String getObjectId() {
         return ObjectId;
@@ -21,5 +22,13 @@ public class Entorno {
 
     public void setNombre(String nombre) {
         Nombre = nombre;
+    }
+
+    public boolean isActivo() {
+        return Activo;
+    }
+
+    public void setActivo(boolean activo) {
+        Activo = activo;
     }
 }
