@@ -38,5 +38,9 @@ public class AddDataActivity extends AppCompatActivity {
     public void buttonAddCamareroOnClick(View view) {
         startActivity(new Intent(this, AddCamareroActivity.class));
     }
+
+    public void buttonAddCocinaOnClick(View view) {
+        startActivity(new Intent(this, AddCocinaActivity.class));
+    }
 }
 

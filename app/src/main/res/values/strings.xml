@@ -24,4 +24,5 @@
     <string name="camareroAddress">Direccion camarero:</string>
     <string name="active">Activo</string>
     <string name="unactive">Desactivo</string>
+    <string name="addCocina">Añadir cocina</string>
 </resources>

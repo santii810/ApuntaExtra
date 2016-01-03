@@ -25,5 +25,10 @@
         android:onClick="buttonAddCamareroOnClick"
         android:text="@string/addCamarero" />
 
-
+    <Button
+        android:id="@+id/addCocina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonAddCocinaOnClick"
+        android:text="@string/addCocina" />
 </LinearLayout>
