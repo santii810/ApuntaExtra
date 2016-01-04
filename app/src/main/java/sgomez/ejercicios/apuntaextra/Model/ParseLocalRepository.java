@@ -47,7 +47,7 @@ public class ParseLocalRepository {
         try {
             List<ParseObject> result = query.find();
             for (ParseObject object : result) {
-                locales.add(rellenaLocal(object));
+                locales.add(rellenar(object));
             }
         } catch (ParseException e) {
             e.printStackTrace();
@@ -61,7 +61,7 @@ public class ParseLocalRepository {
         try {
             List<ParseObject> result = query.find();
 //            if (result.size() > 0) return null;
-            return rellenaLocal(result.get(0));
+            return rellenar(result.get(0));
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -69,7 +69,7 @@ public class ParseLocalRepository {
     }
 
 
-    private Local rellenaLocal(ParseObject result) {
+    private Local rellenar(ParseObject result) {
         Local local = new Local();
         local.setObjectId(result.getObjectId());
         local.setNombre(result.getString(T_NOMBRE));

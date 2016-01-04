@@ -27,4 +27,6 @@
     <string name="addCocina">Añadir cocina</string>
     <string name="cocinaAddress">Direccion cocina:</string>
     <string name="cocinaName">Nombre cocina</string>
+    <string name="viewCamareros">Ver camareros</string>
+    <string name="viewCocinas">Ver cocinas</string>
 </resources>

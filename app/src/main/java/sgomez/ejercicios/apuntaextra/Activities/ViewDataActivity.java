@@ -18,4 +18,12 @@ public class ViewDataActivity extends AppCompatActivity {
     public void buttonViewLocalesOnClick(View view) {
         startActivity(new Intent(this, ViewLocalesActivity.class));
     }
+
+    public void buttonViewCamarerosOnClick(View view) {
+        startActivity(new Intent(this, ViewCamarerosActivity.class));
+    }
+
+    public void buttonViewCocinasOnClick(View view) {
+        startActivity(new Intent(this, ViewCocinasActivity.class));
+    }
 }

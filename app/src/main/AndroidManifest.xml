@@ -44,7 +44,11 @@
         <activity android:name=".Activities.ViewLocalesActivity" />
         <activity android:name=".Activities.ViewLocalDataActivity" />
         <activity android:name=".Activities.AddCamareroActivity" />
-        <activity android:name=".Activities.AddCocinaActivity"></activity>
+        <activity android:name=".Activities.AddCocinaActivity" />
+        <activity android:name=".Activities.ViewCamarerosActivity" />
+        <activity android:name=".Activities.ViewCamareroDataActivity" />
+        <activity android:name=".Activities.ViewCocinasActivity" />
+        <activity android:name=".Activities.ViewCocinaDataActivity"></activity>
     </application>
 
 </manifest>

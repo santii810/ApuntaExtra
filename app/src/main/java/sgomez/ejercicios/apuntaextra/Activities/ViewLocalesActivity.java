@@ -42,10 +42,7 @@ public class ViewLocalesActivity extends AppCompatActivity {
                 Intent intent = new Intent(getBaseContext(), ViewLocalDataActivity.class);
                 intent.putExtra("ObjectId", local.getObjectId());
                 startActivity(intent);
-
             }
         });
-
     }
-
 }

@@ -4,6 +4,9 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import sgomez.ejercicios.apuntaextra.Activities.MainActivity;
 
 /**
@@ -30,6 +33,35 @@ public class ParseCamareroRepository {
         }
     }
 
+    public ArrayList<Camarero> getCamareros() {
+        ArrayList<Camarero> camareros = new ArrayList<>();
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
+        query.orderByAscending(T_NOMBRE);
+        try {
+            List<ParseObject> result = query.find();
+            for (ParseObject object : result) {
+                camareros.add(rellenar(object));
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return camareros;
+    }
+
+
+
+    public Camarero getCamarero(String objectId) {
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
+        query.whereEqualTo(T_ID, objectId);
+        try {
+            List<ParseObject> result = query.find();
+//            if (result.size() > 0) return null;
+            return rellenar(result.get(0));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     private boolean existeCamarero(String nombreCamarero) {
         ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
@@ -40,5 +72,14 @@ public class ParseCamareroRepository {
             e.printStackTrace();
         }
         return true;
+    }
+
+    private Camarero rellenar(ParseObject result) {
+        Camarero camarero = new Camarero();
+        camarero.setObjectId(result.getObjectId());
+        camarero.setNombre(result.getString(T_NOMBRE));
+        camarero.setDireccion(result.getString(T_DIRECCION));
+        camarero.setActivo(result.getBoolean(T_ACTIVO));
+        return camarero;
     }
 }
