@@ -1,4 +1,5 @@
 #!/usr/bin/python
+from Email import Email
 from Parse import ParseTable
 import zipfile
 from datetime import datetime
@@ -21,3 +22,9 @@ finally:
     zf.close()
     for item in tablas:
         remove(ParseTable(item).nombreFichero)
+
+email = Email()
+email.fileName = nombreZip
+email.asunto = nombreZip.split('.')[0]
+email.send_mail()
+
