@@ -1,4 +1,4 @@
-package sgomez.ejercicios.apuntaextra.Model;
+package sgomez.ejercicios.apuntaextra.Repositories;
 
 import java.util.ArrayList;
 

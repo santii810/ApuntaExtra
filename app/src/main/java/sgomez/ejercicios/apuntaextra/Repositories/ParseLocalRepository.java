@@ -1,4 +1,4 @@
-package sgomez.ejercicios.apuntaextra.Model;
+package sgomez.ejercicios.apuntaextra.Repositories;
 
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import sgomez.ejercicios.apuntaextra.Activities.MainActivity;
+import sgomez.ejercicios.apuntaextra.Model.Local;
 
 /**
  * Created by sgomez on 29/12/2015.

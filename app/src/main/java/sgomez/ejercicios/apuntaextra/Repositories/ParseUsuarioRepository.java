@@ -1,10 +1,12 @@
-package sgomez.ejercicios.apuntaextra.Model;
+package sgomez.ejercicios.apuntaextra.Repositories;
 
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 import java.util.List;
+
+import sgomez.ejercicios.apuntaextra.Model.Usuario;
 
 /**
  * Created by sgomez on 27/12/2015.

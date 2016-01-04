@@ -19,11 +19,11 @@ import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.parse.Parse;
 
-import sgomez.ejercicios.apuntaextra.Model.MemoryRepositories;
-import sgomez.ejercicios.apuntaextra.Model.ParseCamareroRepository;
-import sgomez.ejercicios.apuntaextra.Model.ParseCocinaRepositorio;
-import sgomez.ejercicios.apuntaextra.Model.ParseLocalRepository;
-import sgomez.ejercicios.apuntaextra.Model.ParseUsuarioRepository;
+import sgomez.ejercicios.apuntaextra.Repositories.MemoryRepositories;
+import sgomez.ejercicios.apuntaextra.Repositories.ParseCamareroRepository;
+import sgomez.ejercicios.apuntaextra.Repositories.ParseCocinaRepositorio;
+import sgomez.ejercicios.apuntaextra.Repositories.ParseLocalRepository;
+import sgomez.ejercicios.apuntaextra.Repositories.ParseUsuarioRepository;
 import sgomez.ejercicios.apuntaextra.Model.Usuario;
 import sgomez.ejercicios.apuntaextra.R;
 
@@ -67,6 +67,15 @@ public class MainActivity extends AppCompatActivity implements
 
     public static MemoryRepositories getMemoryRepositories() {
         return memoryRepositories;
+    }
+
+    public static ParseCocinaRepositorio getCocinaRepository() {
+        return CocinaRepository;
+    }
+    // [END signIn]
+
+    public static ParseCamareroRepository getCamareroRepository() {
+        return CamareroRepository;
     }
 
     @Override
@@ -120,7 +129,6 @@ public class MainActivity extends AppCompatActivity implements
         signInButton.setScopes(gso.getScopeArray());
         // [END customize_button]
     }
-    // [END signIn]
 
     @Override
     public void onStart() {
@@ -242,13 +250,5 @@ public class MainActivity extends AppCompatActivity implements
 
     public void buttonViewDataOnClick(View view) {
         startActivity(new Intent(this, ViewDataActivity.class));
-    }
-
-    public static ParseCocinaRepositorio getCocinaRepository() {
-        return CocinaRepository;
-    }
-
-    public static ParseCamareroRepository getCamareroRepository() {
-        return CamareroRepository;
     }
 }

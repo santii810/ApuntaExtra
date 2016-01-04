@@ -1,4 +1,4 @@
-package sgomez.ejercicios.apuntaextra.Model;
+package sgomez.ejercicios.apuntaextra.Repositories;
 
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -8,49 +8,50 @@ import java.util.ArrayList;
 import java.util.List;
 
 import sgomez.ejercicios.apuntaextra.Activities.MainActivity;
+import sgomez.ejercicios.apuntaextra.Model.Cocina;
 
 /**
  * Created by sgomez on 03/01/2016.
  */
-public class ParseCamareroRepository {
-    private final String DBNAME = "Camareros";
+public class ParseCocinaRepositorio {
+    private final String DBNAME = "Cocinas";
     private final String T_ID = "objectId";
-    private final String T_NOMBRE = "nombreCamarero";
-    private final String T_DIRECCION = "direccionCamarero";
+    private final String T_NOMBRE = "nombreCocina";
+    private final String T_DIRECCION = "direccionCocina";
     private final String T_ACTIVO = "activo";
     private final String T_INSERCION = "insertadoPor";
 
-    public boolean addCamarero(Camarero camarero) {
-        if (existeCamarero(camarero.getNombre())) return false;
+    public boolean addCocina(Cocina cocina) {
+        if (existeCocina(cocina.getNombre())) return false;
         else {
             ParseObject parseObject = new ParseObject(DBNAME);
-            parseObject.put(T_NOMBRE, camarero.getNombre());
-            parseObject.put(T_DIRECCION, camarero.getDireccion());
-            parseObject.put(T_ACTIVO, camarero.isActivo());
+            parseObject.put(T_NOMBRE, cocina.getNombre());
+            parseObject.put(T_DIRECCION, cocina.getDireccion());
+            parseObject.put(T_ACTIVO, cocina.isActivo());
             parseObject.put(T_INSERCION, MainActivity.getUsuario().getObjectId());
             parseObject.saveInBackground();
             return true;
         }
     }
 
-    public ArrayList<Camarero> getCamareros() {
-        ArrayList<Camarero> camareros = new ArrayList<>();
+
+    public ArrayList<Cocina> getCocinas() {
+        ArrayList<Cocina> cocinas = new ArrayList<>();
         ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
         query.orderByAscending(T_NOMBRE);
         try {
             List<ParseObject> result = query.find();
             for (ParseObject object : result) {
-                camareros.add(rellenar(object));
+                cocinas.add(rellenar(object));
             }
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        return camareros;
+        return cocinas;
     }
 
 
-
-    public Camarero getCamarero(String objectId) {
+    public Cocina getCocina(String objectId) {
         ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
         query.whereEqualTo(T_ID, objectId);
         try {
@@ -63,9 +64,9 @@ public class ParseCamareroRepository {
         return null;
     }
 
-    private boolean existeCamarero(String nombreCamarero) {
+    private boolean existeCocina(String nombreCocina) {
         ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
-        query.whereEqualTo(T_NOMBRE, nombreCamarero);
+        query.whereEqualTo(T_NOMBRE, nombreCocina);
         try {
             return query.find().size() > 0;
         } catch (ParseException e) {
@@ -74,12 +75,12 @@ public class ParseCamareroRepository {
         return true;
     }
 
-    private Camarero rellenar(ParseObject result) {
-        Camarero camarero = new Camarero();
-        camarero.setObjectId(result.getObjectId());
-        camarero.setNombre(result.getString(T_NOMBRE));
-        camarero.setDireccion(result.getString(T_DIRECCION));
-        camarero.setActivo(result.getBoolean(T_ACTIVO));
-        return camarero;
+    private Cocina rellenar(ParseObject result) {
+        Cocina cocina = new Cocina();
+        cocina.setObjectId(result.getObjectId());
+        cocina.setNombre(result.getString(T_NOMBRE));
+        cocina.setDireccion(result.getString(T_DIRECCION));
+        cocina.setActivo(result.getBoolean(T_ACTIVO));
+        return cocina;
     }
 }

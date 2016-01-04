@@ -12,5 +12,5 @@
     <ListView
         android:id="@+id/listViewViewLocales"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 </LinearLayout>

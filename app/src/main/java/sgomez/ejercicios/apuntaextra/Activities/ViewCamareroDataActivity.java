@@ -1,7 +1,8 @@
 package sgomez.ejercicios.apuntaextra.Activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
 import sgomez.ejercicios.apuntaextra.R;
 
 public class ViewCamareroDataActivity extends AppCompatActivity {

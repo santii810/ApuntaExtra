@@ -14,7 +14,7 @@ import sgomez.ejercicios.apuntaextra.Model.Local;
 import sgomez.ejercicios.apuntaextra.R;
 
 public class ViewLocalesActivity extends AppCompatActivity {
-    private ListView listViewLocales ;
+    private ListView listViewLocales;
     private ArrayList<Local> locales;
 
     @Override
