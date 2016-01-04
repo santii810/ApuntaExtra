@@ -40,7 +40,7 @@ public class ViewCamarerosActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Camarero camarero = camareros.get(position);
                 Intent intent = new Intent(getBaseContext(), ViewCamareroDataActivity.class);
-                intent.putExtra("ObjectId", camarero.getObjectId());
+                intent.putExtra("objectId", camarero.getObjectId());
                 startActivity(intent);
             }
         });

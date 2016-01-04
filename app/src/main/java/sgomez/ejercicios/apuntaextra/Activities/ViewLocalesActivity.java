@@ -40,7 +40,7 @@ public class ViewLocalesActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Local local = locales.get(position);
                 Intent intent = new Intent(getBaseContext(), ViewLocalDataActivity.class);
-                intent.putExtra("ObjectId", local.getObjectId());
+                intent.putExtra("objectId", local.getObjectId());
                 startActivity(intent);
             }
         });

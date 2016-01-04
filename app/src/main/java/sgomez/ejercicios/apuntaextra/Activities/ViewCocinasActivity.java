@@ -39,7 +39,7 @@ public class ViewCocinasActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Cocina cocina = cocinas.get(position);
                 Intent intent = new Intent(getBaseContext(), ViewCocinaDataActivity.class);
-                intent.putExtra("ObjectId", cocina.getObjectId());
+                intent.putExtra("objectId", cocina.getObjectId());
                 startActivity(intent);
             }
         });
