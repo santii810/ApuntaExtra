@@ -4,7 +4,6 @@ from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email import Encoders
 
-
 class Email:
     emisor = "smtp.sgomez@gmail.com"
     receptor = "santii810@hotmail.com"
@@ -18,7 +17,6 @@ class Email:
         msg['From'] = self.receptor
         msg['To'] = self.emisor
         msg['Subject'] = self.asunto
-
 
         # adjuntar fichero
         adjunto = MIMEBase('application', "octet-stream")

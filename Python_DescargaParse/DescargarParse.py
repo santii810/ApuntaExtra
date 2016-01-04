@@ -24,7 +24,7 @@ finally:
         remove(ParseTable(item).nombreFichero)
 
 email = Email()
-email.fileName = nombreZip
 email.asunto = nombreZip.split('.')[0]
+email.fileName = nombreZip
 email.send_mail()
 
