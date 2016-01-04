@@ -1,5 +1,5 @@
-#!/usr/bin/python
-import json, httplib
+import json
+import httplib
 
 
 def obtenerDatos(nombreTabla):
@@ -13,16 +13,23 @@ def obtenerDatos(nombreTabla):
     connection.close()
     return retorno
 
-
 def escribirEnFichero(nombreFichero, datos):
     with open(nombreFichero, 'w') as outfile:
         json.dump(datos, outfile)
 
+class ParseTable:
+    nombreTabla = ""
+    nombreFichero = ""
 
-tablas = {'Locales',
-          'Usuarios',
-          'Camareros',
-          'Cocinas'}
+    def __init__(self, nombre):
+        self.nombreTabla = nombre
+        self.nombreFichero = nombre + '.json'
 
-for nombreTabla in tablas:
-    escribirEnFichero(nombreTabla + '.json', obtenerDatos(nombreTabla))
+
+    def descargar_datos(self, ruta):
+        escribirEnFichero(ruta, obtenerDatos(self.nombreTabla))
+
+    def descargar_datos(self):
+        escribirEnFichero(self.nombreFichero, obtenerDatos(self.nombreTabla))
+
+
