@@ -19,7 +19,10 @@ def escribirEnFichero(nombreFichero, datos):
         json.dump(datos, outfile)
 
 
-escribirEnFichero('Locales.json', obtenerDatos("Locales"))
-escribirEnFichero('Usuarios.json', obtenerDatos("Usuarios"))
-escribirEnFichero('Cocinas.json', obtenerDatos("Cocinas"))
-escribirEnFichero('Camareros.json', obtenerDatos("Camareros"))
+tablas = {'Locales',
+          'Usuarios',
+          'Camareros',
+          'Cocinas'}
+
+for nombreTabla in tablas:
+    escribirEnFichero(nombreTabla + '.json', obtenerDatos(nombreTabla))
