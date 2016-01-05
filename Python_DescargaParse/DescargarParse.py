@@ -10,6 +10,8 @@ tablas = {
     'Cocinas',
     'Camareros',
     'Usuarios'
+    'Extras'
+    'ListaCamareros'
 }
 
 nombreZip = 'BD_Parse_' + datetime.now().strftime('%y_%m_%d-%Hh') + '.zip'
