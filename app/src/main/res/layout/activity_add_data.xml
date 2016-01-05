@@ -10,6 +10,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="sgomez.ejercicios.apuntaextra.Activities.AddDataActivity">
 
+    <Button
+        android:id="@+id/buttonAddExtra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonAddExtraOnClick"
+        android:text="@string/addExtra" />
 
     <Button
         android:id="@+id/buttonAddLocal"

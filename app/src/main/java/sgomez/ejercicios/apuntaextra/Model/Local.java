@@ -40,4 +40,9 @@ public class Local extends Entorno {
     public void setServicioHabitual(String servicioHabitual) {
         ServicioHabitual = servicioHabitual;
     }
+
+    @Override
+    public String toString() {
+        return getNombre();
+    }
 }

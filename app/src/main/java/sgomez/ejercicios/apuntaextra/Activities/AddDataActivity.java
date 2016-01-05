@@ -6,13 +6,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import java.sql.Date;
+
+import sgomez.ejercicios.apuntaextra.Model.Extra;
 import sgomez.ejercicios.apuntaextra.R;
 
 
 public class AddDataActivity extends AppCompatActivity {
 
 
-    private final static int LOCAL_REQUEST_CODE = 1;
+    private final static int EXTRA1_REQUEST_CODE = 1;
+    private final static int EXTRA2_REQUEST_CODE = 2;
+    private final static int LOCAL_REQUEST_CODE = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,14 @@ public class AddDataActivity extends AppCompatActivity {
                 if (resultCode == RESULT_OK)
                     Toast.makeText(this, "Local insertado correctamente", Toast.LENGTH_SHORT).show();
                 break;
+            case EXTRA1_REQUEST_CODE:
+                if (resultCode == RESULT_OK) {
+                    Extra extra = new Extra();
+                    extra.setLocal(MainActivity.getLocalRepository().getLocal(data.getStringExtra("objectId")));
+                    extra.setFecha(new Date(data.getIntExtra("año", 0), data.getIntExtra("mes", 0), data.getIntExtra("dia", 0)));
+                    startActivityForResult(new Intent(this, AddExtra2Activity.class), EXTRA2_REQUEST_CODE);
+                }
+                break;
         }
     }
 
@@ -41,6 +54,11 @@ public class AddDataActivity extends AppCompatActivity {
 
     public void buttonAddCocinaOnClick(View view) {
         startActivity(new Intent(this, AddCocinaActivity.class));
+    }
+
+    public void buttonAddExtraOnClick(View view) {
+        startActivityForResult(new Intent(this, AddExtra1Activity.class), EXTRA1_REQUEST_CODE);
+
     }
 }
 

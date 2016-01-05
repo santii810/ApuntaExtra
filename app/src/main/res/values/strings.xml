@@ -29,4 +29,9 @@
     <string name="cocinaName">Nombre cocina</string>
     <string name="viewCamareros">Ver camareros</string>
     <string name="viewCocinas">Ver cocinas</string>
+    <string name="local">Local:</string>
+    <string name="addExtra">Añadir extra</string>
+    <string name="cobrado">Cobrado:</string>
+    <string name="propina">Propina:</string>
+    <string name="tiempo">Tiempo:</string>
 </resources>

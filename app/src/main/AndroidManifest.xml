@@ -48,7 +48,9 @@
         <activity android:name=".Activities.ViewCamarerosActivity" />
         <activity android:name=".Activities.ViewCamareroDataActivity" />
         <activity android:name=".Activities.ViewCocinasActivity" />
-        <activity android:name=".Activities.ViewCocinaDataActivity"></activity>
+        <activity android:name=".Activities.ViewCocinaDataActivity" />
+        <activity android:name=".Activities.AddExtra1Activity" />
+        <activity android:name=".Activities.AddExtra2Activity"></activity>
     </application>
 
 </manifest>
