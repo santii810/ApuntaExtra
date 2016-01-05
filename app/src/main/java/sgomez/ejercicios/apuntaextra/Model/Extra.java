@@ -17,7 +17,11 @@ public class Extra {
     private double tiempo;
     private PagoAsociado pagoAsociado;
     private String notas;
-
+    private String festividad;
+    private Cocina cocina;
+    private String momentoDia;
+    private Double latitude;
+    private Double longitude;
 
     public Extra() {
         this.usuario = MainActivity.getUsuario();
@@ -93,5 +97,45 @@ public class Extra {
 
     public void setNotas(String notas) {
         this.notas = notas;
+    }
+
+    public String getFestividad() {
+        return festividad;
+    }
+
+    public void setFestividad(String festividad) {
+        this.festividad = festividad;
+    }
+
+    public Cocina getCocina() {
+        return cocina;
+    }
+
+    public void setCocina(Cocina cocina) {
+        this.cocina = cocina;
+    }
+
+    public String getMomentoDia() {
+        return momentoDia;
+    }
+
+    public void setMomentoDia(String momentoDia) {
+        this.momentoDia = momentoDia;
+    }
+
+    public Double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
     }
 }

@@ -60,6 +60,29 @@ public class AddDataActivity extends AppCompatActivity {
                     startActivityForResult(intent, EXTRA3_REQUEST_CODE);
                 }
                 break;
+            case EXTRA3_REQUEST_CODE:
+                if (resultCode == RESULT_OK) {
+                    try {
+                        extra.setFestividad(data.getStringExtra("festividad"));
+                    } catch (Exception e) {
+                    }
+                    try {
+                        extra.setCocina(MainActivity.getCocinaRepository().getCocina(data.getStringExtra("cocina")));
+                    } catch (Exception e) {
+                    }
+                    try {
+                        extra.setMomentoDia(data.getStringExtra("momentoDia"));
+                    } catch (Exception e) {
+                    }
+                    try {
+                        extra.setLatitude(data.getDoubleExtra("latitude", 0));
+                        extra.setLatitude(data.getDoubleExtra("longitude", 0));
+                    } catch (Exception e) {
+                    }
+                }
+                if (resultCode == RESULT_OK || resultCode == RESULT_CANCELED) {
+                    //insertar extras
+                }
         }
     }
 
