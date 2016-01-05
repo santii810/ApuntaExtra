@@ -36,4 +36,8 @@
     <string name="tiempo">Tiempo:</string>
     <string name="notes">Notas:</string>
     <string name="pagoAsoc">Pago asociado:</string>
+    <string name="cocina">Cocina:</string>
+    <string name="festividad">Festividad:</string>
+    <string name="dia">Dia</string>
+    <string name="noche">Noche</string>
 </resources>

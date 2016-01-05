@@ -17,6 +17,7 @@ public class AddDataActivity extends AppCompatActivity {
 
     private final static int EXTRA1_REQUEST_CODE = 1;
     private final static int EXTRA2_REQUEST_CODE = 2;
+    private final static int EXTRA3_REQUEST_CODE = 3;
     private final static int LOCAL_REQUEST_CODE = 4;
     private Extra extra;
 
@@ -54,8 +55,11 @@ public class AddDataActivity extends AppCompatActivity {
                     extra.setPagoAsociado(MainActivity.getMemoryRepositories().getPagoAsociado(data.getStringExtra("pagoAsociado")));
                     extra.setNotas(data.getStringExtra("notas"));
 
-
+                    Intent intent = new Intent(this, AddExtra3Activity.class);
+                    intent.putExtra("servicioHabitual", extra.getLocal().getServicioHabitual());
+                    startActivityForResult(intent, EXTRA3_REQUEST_CODE);
                 }
+                break;
         }
     }
 
