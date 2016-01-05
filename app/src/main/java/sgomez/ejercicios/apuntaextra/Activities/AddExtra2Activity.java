@@ -64,6 +64,6 @@ public class AddExtra2Activity extends AppCompatActivity {
     }
 
     private void next() {
-        
+
     }
 }

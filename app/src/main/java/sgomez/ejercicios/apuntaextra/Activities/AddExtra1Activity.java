@@ -78,4 +78,8 @@ public class AddExtra1Activity extends AppCompatActivity {
             finish();
         }
     }
+
+    public void buttonAddExtraAddLocalOnClick(View view) {
+        Toast.makeText(AddExtra1Activity.this, "Not supported yet", Toast.LENGTH_SHORT).show();
+    }
 }
