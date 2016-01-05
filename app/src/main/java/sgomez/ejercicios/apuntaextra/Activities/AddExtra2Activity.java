@@ -57,7 +57,7 @@ public class AddExtra2Activity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.addExtra1MenuNext:
+            case R.id.addExtra2MenuNext:
                 next();
                 return true;
             default:

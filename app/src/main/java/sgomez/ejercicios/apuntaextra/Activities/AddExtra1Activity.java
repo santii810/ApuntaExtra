@@ -42,9 +42,7 @@ public class AddExtra1Activity extends AppCompatActivity {
         spinnerLocales.setAdapter(adapter);
     }
 
-    public void buttonAddExtra1NextOnClick(View view) {
 
-    }
 
 
     @Override
