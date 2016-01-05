@@ -24,6 +24,7 @@ public class MemoryRepositories {
         pagos.add(new PagoAsociado("Extra completa", 5.0));
         pagos.add(new PagoAsociado("Media extra", 2.5));
         pagos.add(new PagoAsociado("No", 0.0));
+        return pagos;
     }
 
 }

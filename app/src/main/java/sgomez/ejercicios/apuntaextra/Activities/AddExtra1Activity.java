@@ -5,13 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import sgomez.ejercicios.apuntaextra.Adapters.Adapter_simple_spinner;
 import sgomez.ejercicios.apuntaextra.Model.Local;
 import sgomez.ejercicios.apuntaextra.R;
 
@@ -36,7 +36,7 @@ public class AddExtra1Activity extends AppCompatActivity {
         ArrayList<Local> locales = MainActivity.getLocalRepository().getLocales();
         locales.add(0, new Local());
         locales.get(0).setNombre("Selecciona local");
-        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, locales);
+        Adapter_simple_spinner adapter = new Adapter_simple_spinner(this, R.layout.view_simple_spinner, locales);
         spinnerLocales.setAdapter(adapter);
     }
 
@@ -52,8 +52,5 @@ public class AddExtra1Activity extends AppCompatActivity {
             setResult(Activity.RESULT_OK, backData);
             finish();
         }
-
-
     }
-
 }

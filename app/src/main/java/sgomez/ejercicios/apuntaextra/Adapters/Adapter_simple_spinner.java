@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import sgomez.ejercicios.apuntaextra.Model.Local;
 import sgomez.ejercicios.apuntaextra.R;
 
 /**
@@ -55,6 +56,9 @@ public class Adapter_simple_spinner extends BaseAdapter {
     public void onEntrada(Object entrada, View view) {
         if (entrada instanceof String) {
             ((TextView) view.findViewById(R.id.textViewSimpleSpinnerView)).setText((String) entrada);
+        }
+        if (entrada instanceof Local) {
+            ((TextView) view.findViewById(R.id.textViewSimpleSpinnerView)).setText(((Local) entrada).getNombre());
         }
     }
 }

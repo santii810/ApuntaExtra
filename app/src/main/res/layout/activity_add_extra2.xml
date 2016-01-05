@@ -70,20 +70,14 @@
             android:layout_weight="1"
             android:numeric="decimal" />
     </LinearLayout>
-    <LinearLayout
+
+    <RadioGroup
+        android:id="@+id/radioGroupPagoAsociado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/radioGroupPagoAsociado">
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Extra completa"/>
-        </RadioGroup>
-    </LinearLayout>
+
+    </RadioGroup>
+
 
 </LinearLayout>
