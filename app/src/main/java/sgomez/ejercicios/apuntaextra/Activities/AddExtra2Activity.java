@@ -1,12 +1,16 @@
 package sgomez.ejercicios.apuntaextra.Activities;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -37,8 +41,6 @@ public class AddExtra2Activity extends AppCompatActivity {
             RadioButton rb = new RadioButton(this);
             rb.setText(item.getNombre());
             rb.setLayoutParams(params);
-
-
             pagoAsociado.addView(rb);
         }
 
@@ -64,6 +66,19 @@ public class AddExtra2Activity extends AppCompatActivity {
     }
 
     private void next() {
-
+        RadioGroup rg = (RadioGroup) findViewById(R.id.radioGroupPagoAsociado))
+        if (rg.isSelected()) {
+            Intent backData = new Intent();
+            backData.putExtra("cobrado", Integer.parseInt(((EditText) findViewById(R.id.editTextExtraCobrado)).getText().toString()));
+            backData.putExtra("propina", Double.parseDouble(((EditText) findViewById(R.id.editTextExtraPropina)).getText().toString()));
+            backData.putExtra("tiempo", Double.parseDouble(((EditText) findViewById(R.id.editTextExtraTiempo)).getText().toString()));
+            RadioButton rb = (RadioButton) findViewById(rg.getCheckedRadioButtonId());
+            backData.putExtra("pagoAsociado", rb.getText().toString());
+            backData.putExtra("notas", ((EditText) findViewById(R.id.editTextExtraNotas)).getText().toString());
+            setResult(Activity.RESULT_OK, backData);
+            finish();
+        } else {
+            Toast.makeText(AddExtra2Activity.this, "Debes seleccionar un pago asociado", Toast.LENGTH_SHORT).show();
+        }
     }
 }

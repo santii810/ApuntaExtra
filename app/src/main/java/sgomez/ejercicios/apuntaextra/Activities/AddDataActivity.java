@@ -18,6 +18,7 @@ public class AddDataActivity extends AppCompatActivity {
     private final static int EXTRA1_REQUEST_CODE = 1;
     private final static int EXTRA2_REQUEST_CODE = 2;
     private final static int LOCAL_REQUEST_CODE = 4;
+    private Extra extra;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +40,22 @@ public class AddDataActivity extends AppCompatActivity {
                 break;
             case EXTRA1_REQUEST_CODE:
                 if (resultCode == RESULT_OK) {
-                    Extra extra = new Extra();
+                    extra = new Extra();
                     extra.setLocal(MainActivity.getLocalRepository().getLocal(data.getStringExtra("objectId")));
                     extra.setFecha(new Date(data.getIntExtra("año", 0), data.getIntExtra("mes", 0), data.getIntExtra("dia", 0)));
                     startActivityForResult(new Intent(this, AddExtra2Activity.class), EXTRA2_REQUEST_CODE);
                 }
                 break;
+            case EXTRA2_REQUEST_CODE:
+                if (resultCode == RESULT_OK) {
+                    extra.setCobrado(data.getIntExtra("cobrado", 0));
+                    extra.setPropina(data.getDoubleExtra("propina", 0));
+                    extra.setTiempo(data.getDoubleExtra("tiempo", 0));
+                    extra.setPagoAsociado(MainActivity.getMemoryRepositories().getPagoAsociado(data.getStringExtra("pagoAsociado")));
+                    extra.setNotas(data.getStringExtra("notas"));
+
+
+                }
         }
     }
 

@@ -22,13 +22,10 @@
             android:layout_weight="1" />
 
         <ImageButton
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:src="@android:drawable/ic_input_add"
             android:onClick="buttonAddExtraAddLocalOnClick"
-            android:text=">>"
-            android:textColor="@color/white" />
+            android:src="@android:drawable/ic_input_add" />
     </LinearLayout>
 
     <DatePicker

@@ -12,6 +12,12 @@ public class Extra {
     private String ObjectId;
     private Local local;
     private Usuario usuario;
+    private int cobrado;
+    private double propina;
+    private double tiempo;
+    private PagoAsociado pagoAsociado;
+    private String notas;
+
 
     public Extra() {
         this.usuario = MainActivity.getUsuario();
@@ -47,5 +53,45 @@ public class Extra {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public int getCobrado() {
+        return cobrado;
+    }
+
+    public void setCobrado(int cobrado) {
+        this.cobrado = cobrado;
+    }
+
+    public double getPropina() {
+        return propina;
+    }
+
+    public void setPropina(double propina) {
+        this.propina = propina;
+    }
+
+    public double getTiempo() {
+        return tiempo;
+    }
+
+    public void setTiempo(double tiempo) {
+        this.tiempo = tiempo;
+    }
+
+    public PagoAsociado getPagoAsociado() {
+        return pagoAsociado;
+    }
+
+    public void setPagoAsociado(PagoAsociado pagoAsociado) {
+        this.pagoAsociado = pagoAsociado;
+    }
+
+    public String getNotas() {
+        return notas;
+    }
+
+    public void setNotas(String notas) {
+        this.notas = notas;
     }
 }
