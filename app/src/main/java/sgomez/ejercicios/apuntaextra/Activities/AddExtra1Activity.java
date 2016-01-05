@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.Spinner;
@@ -41,6 +43,29 @@ public class AddExtra1Activity extends AppCompatActivity {
     }
 
     public void buttonAddExtra1NextOnClick(View view) {
+
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.activity_add_extra1, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.addExtra1MenuNext:
+                next();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void next() {
         if (((Local) spinnerLocales.getSelectedItem()).getNombre().equals("Selecciona local")) {
             Toast.makeText(AddExtra1Activity.this, "Debes seleccionar un local", Toast.LENGTH_LONG).show();
         } else {
