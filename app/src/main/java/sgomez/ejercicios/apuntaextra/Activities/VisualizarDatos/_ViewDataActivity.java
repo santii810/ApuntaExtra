@@ -26,4 +26,8 @@ public class _ViewDataActivity extends AppCompatActivity {
     public void buttonViewCocinasOnClick(View view) {
         startActivity(new Intent(this, ViewCocinasActivity.class));
     }
+
+    public void buttonViewExtraOnClick(View view) {
+        startActivity(new Intent(this, ViewExtrasActivity.class));
+    }
 }

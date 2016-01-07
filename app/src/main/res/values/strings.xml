@@ -40,4 +40,5 @@
     <string name="festividad">Festividad:</string>
     <string name="dia">Dia</string>
     <string name="noche">Noche</string>
+    <string name="viewExtra">Ver extras</string>
 </resources>
