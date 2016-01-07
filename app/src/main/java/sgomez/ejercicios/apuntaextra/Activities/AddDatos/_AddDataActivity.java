@@ -1,4 +1,4 @@
-package sgomez.ejercicios.apuntaextra.Activities;
+package sgomez.ejercicios.apuntaextra.Activities.AddDatos;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,11 +8,12 @@ import android.widget.Toast;
 
 import java.sql.Date;
 
+import sgomez.ejercicios.apuntaextra.Activities.MainActivity;
 import sgomez.ejercicios.apuntaextra.Model.Extra;
 import sgomez.ejercicios.apuntaextra.R;
 
 
-public class AddDataActivity extends AppCompatActivity {
+public class _AddDataActivity extends AppCompatActivity {
 
 
     private final static int EXTRA1_REQUEST_CODE = 1;

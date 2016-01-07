@@ -12,6 +12,7 @@ import sgomez.ejercicios.apuntaextra.Model.Camarero;
 
 /**
  * Created by sgomez on 03/01/2016.
+ * Repositorio de Camareros
  */
 public class ParseCamareroRepository {
     private final String DBNAME = "Camareros";
@@ -55,7 +56,6 @@ public class ParseCamareroRepository {
         query.whereEqualTo(T_ID, objectId);
         try {
             List<ParseObject> result = query.find();
-//            if (result.size() > 0) return null;
             return rellenar(result.get(0));
         } catch (ParseException e) {
             e.printStackTrace();

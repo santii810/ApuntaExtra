@@ -1,4 +1,4 @@
-package sgomez.ejercicios.apuntaextra.Activities;
+package sgomez.ejercicios.apuntaextra.Activities.AddDatos;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.widget.Spinner;
 
 import java.util.ArrayList;
 
+import sgomez.ejercicios.apuntaextra.Activities.MainActivity;
 import sgomez.ejercicios.apuntaextra.Adapters.Adapter_simple_spinner;
 import sgomez.ejercicios.apuntaextra.Model.Cocina;
 import sgomez.ejercicios.apuntaextra.R;
@@ -21,8 +22,6 @@ public class AddExtra3Activity extends AppCompatActivity {
 
     private String servicioHabitual;
     private static final int GET_MAP_POSITION_REQUEST_CODE = 1;
-    private double latitude;
-    private double longitude;
     private Intent backData;
 
 

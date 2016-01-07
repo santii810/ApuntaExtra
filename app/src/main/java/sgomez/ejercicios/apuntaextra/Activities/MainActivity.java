@@ -3,6 +3,7 @@ package sgomez.ejercicios.apuntaextra.Activities;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -19,9 +20,12 @@ import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.parse.Parse;
 
+import sgomez.ejercicios.apuntaextra.Activities.AddDatos._AddDataActivity;
+import sgomez.ejercicios.apuntaextra.Activities.VisualizarDatos._ViewDataActivity;
 import sgomez.ejercicios.apuntaextra.Repositories.MemoryRepositories;
 import sgomez.ejercicios.apuntaextra.Repositories.ParseCamareroRepository;
 import sgomez.ejercicios.apuntaextra.Repositories.ParseCocinaRepositorio;
+import sgomez.ejercicios.apuntaextra.Repositories.ParseExtraRepository;
 import sgomez.ejercicios.apuntaextra.Repositories.ParseLocalRepository;
 import sgomez.ejercicios.apuntaextra.Repositories.ParseUsuarioRepository;
 import sgomez.ejercicios.apuntaextra.Model.Usuario;
@@ -41,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements
     private static ParseLocalRepository LocalRepository = new ParseLocalRepository();
     private static ParseCamareroRepository CamareroRepository = new ParseCamareroRepository();
     private static ParseCocinaRepositorio CocinaRepository = new ParseCocinaRepositorio();
+    private static ParseExtraRepository ExtraRepository = new ParseExtraRepository();
     private static MemoryRepositories memoryRepositories = new MemoryRepositories();
 
 
@@ -86,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements
         try {
             Parse.enableLocalDatastore(this);
             Parse.initialize(this);
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
 
 
@@ -148,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements
             showProgressDialog();
             opr.setResultCallback(new ResultCallback<GoogleSignInResult>() {
                 @Override
-                public void onResult(GoogleSignInResult googleSignInResult) {
+                public void onResult(@NonNull GoogleSignInResult googleSignInResult) {
                     hideProgressDialog();
                     handleSignInResult(googleSignInResult);
                 }
@@ -195,7 +200,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onConnectionFailed(ConnectionResult connectionResult) {
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
         // An unresolvable error has occurred and Google APIs (including Sign-In) will not
         // be available.
         Log.d(TAG, "onConnectionFailed:" + connectionResult);
@@ -245,10 +250,14 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     public void buttonAddDataOnClick(View view) {
-        startActivity(new Intent(this, AddDataActivity.class));
+        startActivity(new Intent(this, _AddDataActivity.class));
     }
 
     public void buttonViewDataOnClick(View view) {
-        startActivity(new Intent(this, ViewDataActivity.class));
+        startActivity(new Intent(this, _ViewDataActivity.class));
+    }
+
+    public static ParseExtraRepository getExtraRepository() {
+        return ExtraRepository;
     }
 }

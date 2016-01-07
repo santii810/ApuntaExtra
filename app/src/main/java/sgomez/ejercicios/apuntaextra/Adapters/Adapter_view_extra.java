@@ -7,28 +7,32 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 import sgomez.ejercicios.apuntaextra.Model.Camarero;
 import sgomez.ejercicios.apuntaextra.Model.Cocina;
 import sgomez.ejercicios.apuntaextra.Model.Entorno;
+import sgomez.ejercicios.apuntaextra.Model.Extra;
 import sgomez.ejercicios.apuntaextra.Model.Local;
 import sgomez.ejercicios.apuntaextra.R;
 
 /**
- * Created by dam209 on 03/12/2015.
- * Adapter con 2 textViews tomando el patron de item y subitem
+ * Created by dam209 on 07/01/2016.
+ * Adapter para view_extra
  */
-public class Adapter_item_subitem extends ArrayAdapter {
+public class Adapter_view_extra extends ArrayAdapter {
 
-    private ArrayList datos;
+
+    private ArrayList<Extra> datos;
     private Context context;
 
-    public Adapter_item_subitem(Context context, ArrayList entradas) {
-        super(context, R.layout.view_item_subitem, entradas);
+    public Adapter_view_extra(Context context, ArrayList<Extra> entradas) {
+        super(context, R.layout.view_extras, entradas);
         this.context = context;
         this.datos = entradas;
-
     }
 
     @Override
@@ -50,16 +54,25 @@ public class Adapter_item_subitem extends ArrayAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View item = inflater.inflate(R.layout.view_item_subitem, null);
-        onEntrada((Entorno) datos.get(position), item);
+        onEntrada(datos.get(position), item);
         return item;
     }
 
-    public void onEntrada(Entorno entrada, View view) {
-        if (entrada instanceof Local || entrada instanceof Camarero || entrada instanceof Cocina) {
-            TextView titulo = (TextView) view.findViewById(R.id.viewItem);
-            titulo.setText((entrada).getNombre());
-            TextView subTitulo = (TextView) view.findViewById(R.id.viewSubItem);
-            subTitulo.setText(entrada.getDireccion());
-        }
+
+    public void onEntrada(Extra entrada, View view) {
+        TextView local = (TextView) view.findViewById(R.id.textViewLocalViewExtras);
+        local.setText((entrada).getLocal().getNombre());
+        TextView dia = (TextView) view.findViewById(R.id.textViewDiaViewExtras);
+        dia.setText(getDayOfTheWeek((Date) entrada.getFecha()));
+        TextView fecha = (TextView) view.findViewById(R.id.textViewFechaViewExtras);
+        fecha.setText(entrada.getFecha().toString());
+
     }
+
+    public static int getDayOfTheWeek(Date d) {
+        GregorianCalendar cal = new GregorianCalendar();
+        cal.setTime(d);
+        return cal.get(Calendar.DAY_OF_WEEK);
+    }
+
 }
