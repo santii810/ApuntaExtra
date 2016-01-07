@@ -66,7 +66,7 @@ public class AddExtra2Activity extends AppCompatActivity {
     }
 
     private void next() {
-        RadioGroup rg = (RadioGroup) findViewById(R.id.radioGroupPagoAsociado))
+        RadioGroup rg = (RadioGroup) findViewById(R.id.radioGroupPagoAsociado);
         if (rg.isSelected()) {
             Intent backData = new Intent();
             backData.putExtra("cobrado", Integer.parseInt(((EditText) findViewById(R.id.editTextExtraCobrado)).getText().toString()));
