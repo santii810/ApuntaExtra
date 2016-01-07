@@ -1,4 +1,4 @@
-package sgomez.ejercicios.apuntaextra.Activities;
+package sgomez.ejercicios.apuntaextra.Activities.VisualizarDatos;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.view.View;
 
 import sgomez.ejercicios.apuntaextra.R;
 
-public class ViewDataActivity extends AppCompatActivity {
+public class _ViewDataActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

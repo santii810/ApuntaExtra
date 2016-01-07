@@ -1,4 +1,4 @@
-package sgomez.ejercicios.apuntaextra.Activities;
+package sgomez.ejercicios.apuntaextra.Activities.AñadirDatos;
 
 import android.Manifest;
 import android.app.AlertDialog;

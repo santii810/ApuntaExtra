@@ -1,4 +1,4 @@
-package sgomez.ejercicios.apuntaextra.Activities;
+package sgomez.ejercicios.apuntaextra.Activities.AñadirDatos;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import sgomez.ejercicios.apuntaextra.Activities.MainActivity;
 import sgomez.ejercicios.apuntaextra.Adapters.Adapter_simple_spinner;
 import sgomez.ejercicios.apuntaextra.Model.Local;
 import sgomez.ejercicios.apuntaextra.R;
