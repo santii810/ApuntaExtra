@@ -21,10 +21,10 @@ import sgomez.ejercicios.apuntaextra.R;
  */
 public class Adapter_item_subitem extends ArrayAdapter {
 
-    private ArrayList<Entorno> datos;
+    private ArrayList datos;
     private Context context;
 
-    public Adapter_item_subitem(Context context, ArrayList<Entorno> entradas) {
+    public Adapter_item_subitem(Context context, ArrayList entradas) {
         super(context, R.layout.view_item_subitem, entradas);
         this.context = context;
         this.datos = entradas;
@@ -50,7 +50,7 @@ public class Adapter_item_subitem extends ArrayAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View item = inflater.inflate(R.layout.view_item_subitem, null);
-        onEntrada(datos.get(position), item);
+        onEntrada((Entorno) datos.get(position), item);
         return item;
     }
 

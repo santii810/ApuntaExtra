@@ -53,6 +53,8 @@
         <activity android:name=".Activities.AddExtra2Activity" />
         <activity android:name=".Activities.ViewExtraActivity" >
         </activity>
+        <activity android:name=".Activities.ViewExtraDataActivity" >
+        </activity>
     </application>
 
 </manifest>

@@ -10,6 +10,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import sgomez.ejercicios.apuntaextra.Adapters.Adapter_item_subitem;
+import sgomez.ejercicios.apuntaextra.Model.Entorno;
 import sgomez.ejercicios.apuntaextra.Model.Local;
 import sgomez.ejercicios.apuntaextra.R;
 
