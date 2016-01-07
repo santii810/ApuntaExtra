@@ -1,16 +1,15 @@
-package sgomez.ejercicios.apuntaextra.Activities;
+package sgomez.ejercicios.apuntaextra.Activities.VisualizarDatos;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.List;
 
+import sgomez.ejercicios.apuntaextra.Activities.MainActivity;
 import sgomez.ejercicios.apuntaextra.Adapters.Adapter_view_extra;
 import sgomez.ejercicios.apuntaextra.Model.Extra;
 import sgomez.ejercicios.apuntaextra.R;

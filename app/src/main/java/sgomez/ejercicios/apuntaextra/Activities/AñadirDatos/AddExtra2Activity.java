@@ -1,4 +1,4 @@
-package sgomez.ejercicios.apuntaextra.Activities;
+package sgomez.ejercicios.apuntaextra.Activities.AñadirDatos;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import sgomez.ejercicios.apuntaextra.Activities.MainActivity;
 import sgomez.ejercicios.apuntaextra.Model.PagoAsociado;
 import sgomez.ejercicios.apuntaextra.R;
 

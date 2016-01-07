@@ -37,23 +37,23 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.PerfilActivity" />
-        <activity android:name=".Activities.AddDataActivity" />
-        <activity android:name=".Activities.AddLocalActivity" />
-        <activity android:name=".Activities.AddMapPositionActivity" />
-        <activity android:name=".Activities.ViewDataActivity" />
-        <activity android:name=".Activities.ViewLocalesActivity" />
-        <activity android:name=".Activities.ViewLocalDataActivity" />
-        <activity android:name=".Activities.AddCamareroActivity" />
-        <activity android:name=".Activities.AddCocinaActivity" />
-        <activity android:name=".Activities.ViewCamarerosActivity" />
-        <activity android:name=".Activities.ViewCamareroDataActivity" />
-        <activity android:name=".Activities.ViewCocinasActivity" />
-        <activity android:name=".Activities.ViewCocinaDataActivity" />
-        <activity android:name=".Activities.AddExtra1Activity" />
-        <activity android:name=".Activities.AddExtra2Activity" />
-        <activity android:name=".Activities.ViewExtrasActivity" >
+        <activity android:name=".Activities.AñadirDatos._AddDataActivity" />
+        <activity android:name=".Activities.AñadirDatos.AddLocalActivity" />
+        <activity android:name=".Activities.AñadirDatos.AddMapPositionActivity" />
+        <activity android:name=".Activities.VisualizarDatos._ViewDataActivity" />
+        <activity android:name=".Activities.VisualizarDatos.ViewLocalesActivity" />
+        <activity android:name=".Activities.VisualizarDatos.ViewLocalDataActivity" />
+        <activity android:name=".Activities.AñadirDatos.AddCamareroActivity" />
+        <activity android:name=".Activities.AñadirDatos.AddCocinaActivity" />
+        <activity android:name=".Activities.VisualizarDatos.ViewCamarerosActivity" />
+        <activity android:name=".Activities.VisualizarDatos.ViewCamareroDataActivity" />
+        <activity android:name=".Activities.VisualizarDatos.ViewCocinasActivity" />
+        <activity android:name=".Activities.VisualizarDatos.ViewCocinaDataActivity" />
+        <activity android:name=".Activities.AñadirDatos.AddExtra1Activity" />
+        <activity android:name=".Activities.AñadirDatos.AddExtra2Activity" />
+        <activity android:name=".Activities.VisualizarDatos.ViewExtrasActivity" >
         </activity>
-        <activity android:name=".Activities.ViewExtraDataActivity" >
+        <activity android:name=".Activities.VisualizarDatos.ViewExtraDataActivity" >
         </activity>
     </application>
 

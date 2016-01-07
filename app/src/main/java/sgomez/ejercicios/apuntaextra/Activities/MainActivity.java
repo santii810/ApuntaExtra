@@ -20,6 +20,8 @@ import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.parse.Parse;
 
+import sgomez.ejercicios.apuntaextra.Activities.AñadirDatos._AddDataActivity;
+import sgomez.ejercicios.apuntaextra.Activities.VisualizarDatos._ViewDataActivity;
 import sgomez.ejercicios.apuntaextra.Repositories.MemoryRepositories;
 import sgomez.ejercicios.apuntaextra.Repositories.ParseCamareroRepository;
 import sgomez.ejercicios.apuntaextra.Repositories.ParseCocinaRepositorio;
@@ -248,11 +250,11 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     public void buttonAddDataOnClick(View view) {
-        startActivity(new Intent(this, AddDataActivity.class));
+        startActivity(new Intent(this, _AddDataActivity.class));
     }
 
     public void buttonViewDataOnClick(View view) {
-        startActivity(new Intent(this, ViewDataActivity.class));
+        startActivity(new Intent(this, _ViewDataActivity.class));
     }
 
     public static ParseExtraRepository getExtraRepository() {

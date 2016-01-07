@@ -1,10 +1,11 @@
-package sgomez.ejercicios.apuntaextra.Activities;
+package sgomez.ejercicios.apuntaextra.Activities.VisualizarDatos;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import sgomez.ejercicios.apuntaextra.Activities.MainActivity;
 import sgomez.ejercicios.apuntaextra.Model.Local;
 import sgomez.ejercicios.apuntaextra.R;
 
