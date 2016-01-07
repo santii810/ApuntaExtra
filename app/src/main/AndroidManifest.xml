@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="sgomez.ejercicios.apuntaextra">
+    package="sgomez.ejercicios.apuntaextra" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -18,7 +18,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <meta-data
             android:name="com.parse.APPLICATION_ID"
             android:value="7fd4572Fnf1o4JDhU5Nm571XmL9EvwESk07Lzay8" />
@@ -29,7 +29,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCKTasu3lLlQGc_uOdDSBpl0Bsdu_srO78" />
 
-        <activity android:name=".Activities.MainActivity">
+        <activity android:name=".Activities.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -50,7 +50,9 @@
         <activity android:name=".Activities.ViewCocinasActivity" />
         <activity android:name=".Activities.ViewCocinaDataActivity" />
         <activity android:name=".Activities.AddExtra1Activity" />
-        <activity android:name=".Activities.AddExtra2Activity"></activity>
+        <activity android:name=".Activities.AddExtra2Activity" />
+        <activity android:name=".Activities.ViewExtraActivity" >
+        </activity>
     </application>
 
 </manifest>
