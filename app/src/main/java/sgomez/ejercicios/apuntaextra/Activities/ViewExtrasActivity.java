@@ -15,7 +15,7 @@ import sgomez.ejercicios.apuntaextra.Adapters.Adapter_view_extra;
 import sgomez.ejercicios.apuntaextra.Model.Extra;
 import sgomez.ejercicios.apuntaextra.R;
 
-public class ViewExtraActivity extends AppCompatActivity {
+public class ViewExtrasActivity extends AppCompatActivity {
 
     private ListView listViewExtras;
     private ArrayList<Extra> extras;
