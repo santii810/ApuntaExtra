@@ -41,4 +41,6 @@
     <string name="dia">Dia</string>
     <string name="noche">Noche</string>
     <string name="viewExtra">Ver extras</string>
+    <string name="cobradoObligatorio">Cobrado:*</string>
+    <string name="pagoAsocObligatorio">Pago asociado:*</string>
 </resources>

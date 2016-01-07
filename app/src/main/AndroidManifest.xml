@@ -51,6 +51,7 @@
         <activity android:name=".Activities.VisualizarDatos.ViewCocinaDataActivity" />
         <activity android:name=".Activities.AddDatos.AddExtra1Activity" />
         <activity android:name=".Activities.AddDatos.AddExtra2Activity" />
+        <activity android:name=".Activities.AddDatos.AddExtra3Activity" />
         <activity android:name=".Activities.VisualizarDatos.ViewExtrasActivity" >
         </activity>
         <activity android:name=".Activities.VisualizarDatos.ViewExtraDataActivity" >

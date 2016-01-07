@@ -68,18 +68,30 @@ public class AddExtra2Activity extends AppCompatActivity {
 
     private void next() {
         RadioGroup rg = (RadioGroup) findViewById(R.id.radioGroupPagoAsociado);
-        if (rg.getCheckedRadioButtonId() != -1) {
+        EditText editTextCobrado = (EditText) findViewById(R.id.editTextExtraCobrado);
+
+
+        if (rg.getCheckedRadioButtonId() != -1 && !editTextCobrado.getText().toString().equals("")) {
             Intent backData = new Intent();
-            backData.putExtra("cobrado", Integer.parseInt(((EditText) findViewById(R.id.editTextExtraCobrado)).getText().toString()));
-            backData.putExtra("propina", Double.parseDouble(((EditText) findViewById(R.id.editTextExtraPropina)).getText().toString()));
-            backData.putExtra("tiempo", Double.parseDouble(((EditText) findViewById(R.id.editTextExtraTiempo)).getText().toString()));
+            backData.putExtra("cobrado", Integer.parseInt(editTextCobrado.getText().toString()));
+            try {
+                backData.putExtra("propina", Double.parseDouble(((EditText) findViewById(R.id.editTextExtraPropina)).getText().toString()));
+            } catch (Exception ignored) {
+            }
+            try {
+                backData.putExtra("tiempo", Double.parseDouble(((EditText) findViewById(R.id.editTextExtraTiempo)).getText().toString()));
+            } catch (Exception ignored) {
+            }
+
+
             RadioButton rb = (RadioButton) findViewById(rg.getCheckedRadioButtonId());
             backData.putExtra("pagoAsociado", rb.getText().toString());
             backData.putExtra("notas", ((EditText) findViewById(R.id.editTextExtraNotas)).getText().toString());
+
             setResult(Activity.RESULT_OK, backData);
             finish();
         } else {
-            Toast.makeText(AddExtra2Activity.this, "Debes seleccionar un pago asociado", Toast.LENGTH_SHORT).show();
+            Toast.makeText(AddExtra2Activity.this, "Debes completar los campos obligatorios", Toast.LENGTH_SHORT).show();
         }
     }
 }

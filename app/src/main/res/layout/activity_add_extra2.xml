@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="@string/cobrado"
+            android:text="@string/cobradoObligatorio"
             android:textSize="20dp" />
 
         <EditText
@@ -36,7 +36,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-
         android:orientation="horizontal">
 
         <TextView
@@ -58,7 +57,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-
         android:orientation="horizontal">
 
         <TextView
@@ -78,9 +76,9 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"        android:layout_marginTop="10dp"
-
-        android:text="@string/pagoAsoc"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/pagoAsocObligatorio"
         android:textSize="20dp" />
 
     <RadioGroup
@@ -93,8 +91,8 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"        android:layout_marginTop="10dp"
-
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="@string/notes"
         android:textSize="20dp" />
 
