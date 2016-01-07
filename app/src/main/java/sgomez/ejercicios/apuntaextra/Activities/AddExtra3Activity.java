@@ -88,6 +88,7 @@ public class AddExtra3Activity extends AppCompatActivity {
     }
 
 
+
     private void updateIU(int festividad, int cocina, int momentoDia, int direccion) {
         findViewById(R.id.spinnerFestividad).setVisibility(festividad);
         findViewById(R.id.spinnerCocina).setVisibility(cocina);
