@@ -63,7 +63,6 @@ public class AddExtra3Activity extends AppCompatActivity {
 
         //COCINAS
         ArrayList<Cocina> cocinas = MainActivity.getCocinaRepository().getCocinas();
-
         cocinas.add(0, new Cocina());
         cocinas.get(0).setNombre("Seleccionar cocina");
         Adapter_simple_spinner adapterCocina = new Adapter_simple_spinner(this, R.layout.view_simple_spinner, cocinas);

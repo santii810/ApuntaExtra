@@ -21,24 +21,57 @@ public class ParseExtraRepository {
     private final String T_LOCAL = "localId";
     private final String T_USUARIO = "userId";
     private final String T_COBRADO = "cobrado";
+    private final String T_PAGO_ASOCIADO = "pagoAsociado";
     private final String T_PROPINA = "propina";
     private final String T_TIEMPO = "tiempo";
-    private final String T_PAGO_ASOCIADO = "pagoAsociado";
     private final String T_NOTAS = "notas";
+    private final String T_COCINA = "cocina";
+    private final String T_FESTIVIDAD = "festividad";
+    private final String T_MOMENTO_DIA = "momentoDia";
+    private final String T_LATITUDE = "latitude";
+    private final String T_LONGITUDE = "longitude";
 
     public String addExtra(Extra extra) {
         ParseObject parseObject = new ParseObject(DBNAME);
 
         try {
+            parseObject.put(T_FECHA, extra.getFecha());
             parseObject.put(T_LOCAL, extra.getLocal().getObjectId());
             parseObject.put(T_USUARIO, extra.getUsuario().getObjectId());
             parseObject.put(T_COBRADO, extra.getCobrado());
             parseObject.put(T_PAGO_ASOCIADO, extra.getPagoAsociado().getCantidad());
-            parseObject.put(T_PROPINA, extra.getPropina());
-            parseObject.put(T_TIEMPO, extra.getTiempo());
-            parseObject.put(T_NOTAS, extra.getNotas());
-
-
+            try {
+                parseObject.put(T_PROPINA, extra.getPropina());
+            } catch (Exception ignored) {
+            }
+            try {
+                parseObject.put(T_TIEMPO, extra.getTiempo());
+            } catch (Exception ignored) {
+            }
+            try {
+                parseObject.put(T_NOTAS, extra.getNotas());
+            } catch (Exception ignored) {
+            }
+            try {
+                parseObject.put(T_COCINA, extra.getCocina().getObjectId());
+            } catch (Exception ignored) {
+            }
+            try {
+                parseObject.put(T_FESTIVIDAD, extra.getFestividad());
+            } catch (Exception ignored) {
+            }
+            try {
+                parseObject.put(T_MOMENTO_DIA, extra.getMomentoDia());
+            } catch (Exception ignored) {
+            }
+            try {
+                parseObject.put(T_LATITUDE, extra.getLatitude());
+            } catch (Exception ignored) {
+            }
+            try {
+                parseObject.put(T_LONGITUDE, extra.getLongitude());
+            } catch (Exception ignored) {
+            }
             parseObject.save();
         } catch (Exception ignored) {
 
