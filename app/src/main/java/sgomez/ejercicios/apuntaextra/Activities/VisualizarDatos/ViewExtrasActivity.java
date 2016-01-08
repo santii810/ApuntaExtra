@@ -34,15 +34,16 @@ public class ViewExtrasActivity extends AppCompatActivity {
 
         extras = MainActivity.getExtraRepository().getExtras();
         listViewExtras.setAdapter(new Adapter_view_extra(this, extras));
-        listViewExtras.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Extra extra = extras.get(position);
-                Intent intent = new Intent(getBaseContext(), ViewExtraDataActivity.class);
-                intent.putExtra("objectId", extra.getObjectId());
-                startActivity(intent);
-            }
-        });
+
+//        listViewExtras.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Extra extra = extras.get(position);
+//                Intent intent = new Intent(getBaseContext(), ViewExtraDataActivity.class);
+//                intent.putExtra("objectId", extra.getObjectId());
+//                startActivity(intent);
+//            }
+//        });
 
     }
 }

@@ -7,16 +7,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
-import sgomez.ejercicios.apuntaextra.Model.Camarero;
-import sgomez.ejercicios.apuntaextra.Model.Cocina;
-import sgomez.ejercicios.apuntaextra.Model.Entorno;
 import sgomez.ejercicios.apuntaextra.Model.Extra;
-import sgomez.ejercicios.apuntaextra.Model.Local;
 import sgomez.ejercicios.apuntaextra.R;
 
 /**
@@ -53,7 +50,7 @@ public class Adapter_view_extra extends ArrayAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View item = inflater.inflate(R.layout.view_item_subitem, null);
+        View item = inflater.inflate(R.layout.view_extras, null);
         onEntrada(datos.get(position), item);
         return item;
     }
@@ -61,18 +58,23 @@ public class Adapter_view_extra extends ArrayAdapter {
 
     public void onEntrada(Extra entrada, View view) {
         TextView local = (TextView) view.findViewById(R.id.textViewLocalViewExtras);
-        local.setText((entrada).getLocal().getNombre());
+        local.setText(entrada.getLocal().getNombre());
         TextView dia = (TextView) view.findViewById(R.id.textViewDiaViewExtras);
-        dia.setText(getDayOfTheWeek((Date) entrada.getFecha()));
+        dia.setText(getDayOfTheWeek(entrada.getFecha()));
         TextView fecha = (TextView) view.findViewById(R.id.textViewFechaViewExtras);
-        fecha.setText(entrada.getFecha().toString());
+        fecha.setText(formatearFecha(entrada.getFecha()));
 
     }
 
-    public static int getDayOfTheWeek(Date d) {
+    private static String getDayOfTheWeek(Date d) {
         GregorianCalendar cal = new GregorianCalendar();
+        String[] dias = {"Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"};
         cal.setTime(d);
-        return cal.get(Calendar.DAY_OF_WEEK);
+        return dias[cal.get(Calendar.DAY_OF_WEEK) - 1];
     }
 
+    private static String formatearFecha(Date fecha) {
+        SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
+        return formateador.format(fecha);
+    }
 }
