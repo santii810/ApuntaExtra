@@ -90,6 +90,22 @@ public class ParseExtraRepository {
         return extras;
     }
 
+    public ArrayList<Extra> getExtras(String objectId) {
+        ArrayList<Extra> extras = new ArrayList<>();
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
+        query.whereEqualTo(T_USUARIO, objectId);
+        query.orderByAscending(T_FECHA);
+        try {
+            List<ParseObject> result = query.find();
+            for (ParseObject object : result) {
+                extras.add(rellenar(object));
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return extras;
+    }
+
     public Extra getExtra(String objectId) {
         ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
         query.whereEqualTo(T_ID, objectId);
