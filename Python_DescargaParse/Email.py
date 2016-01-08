@@ -19,12 +19,13 @@ class Email:
         msg['Subject'] = self.asunto
 
         # adjuntar fichero
-        adjunto = MIMEBase('application', "octet-stream")
-        adjunto.set_payload(open(self.fileName, "rb").read())
-        Encoders.encode_base64(adjunto)
-        adjunto.add_header('Content-Disposition', 'attachment; filename="%s"'
-                           % os.path.basename(self.fileName))
-        msg.attach(adjunto)
+        if(self.fileName != ""):
+            adjunto = MIMEBase('application', "octet-stream")
+            adjunto.set_payload(open(self.fileName, "rb").read())
+            Encoders.encode_base64(adjunto)
+            adjunto.add_header('Content-Disposition', 'attachment; filename="%s"'
+                               % os.path.basename(self.fileName))
+            msg.attach(adjunto)
 
         # Autenticado
         smpt = smtplib.SMTP('smtp.gmail.com', 587)
@@ -33,5 +34,5 @@ class Email:
         smpt.ehlo()
         smpt.login(self.emisor, self.password)
 
-        smpt.sendmail(self.emisor, self.receptor, msg.as_string())
+        smpt.sendmail(self.emisor, self.receptor, msg.as_string(), self.text)
         smpt.close()
