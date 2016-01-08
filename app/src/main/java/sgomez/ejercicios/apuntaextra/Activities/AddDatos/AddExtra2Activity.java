@@ -86,7 +86,6 @@ public class AddExtra2Activity extends AppCompatActivity {
 
             RadioButton rb = (RadioButton) findViewById(rg.getCheckedRadioButtonId());
             backData.putExtra("pagoAsociado", rb.getText().toString());
-            backData.putExtra("notas", ((EditText) findViewById(R.id.editTextExtraNotas)).getText().toString());
 
             setResult(Activity.RESULT_OK, backData);
             finish();

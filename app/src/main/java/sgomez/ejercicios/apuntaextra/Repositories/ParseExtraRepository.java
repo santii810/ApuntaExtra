@@ -40,14 +40,8 @@ public class ParseExtraRepository {
             parseObject.put(T_USUARIO, extra.getUsuario().getObjectId());
             parseObject.put(T_COBRADO, extra.getCobrado());
             parseObject.put(T_PAGO_ASOCIADO, extra.getPagoAsociado().getCantidad());
-            try {
-                parseObject.put(T_PROPINA, extra.getPropina());
-            } catch (Exception ignored) {
-            }
-            try {
-                parseObject.put(T_TIEMPO, extra.getTiempo());
-            } catch (Exception ignored) {
-            }
+            parseObject.put(T_PROPINA, extra.getPropina());
+            parseObject.put(T_TIEMPO, extra.getTiempo());
             try {
                 parseObject.put(T_NOTAS, extra.getNotas());
             } catch (Exception ignored) {

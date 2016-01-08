@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -15,14 +16,17 @@ import sgomez.ejercicios.apuntaextra.Adapters.Adapter_simple_spinner;
 import sgomez.ejercicios.apuntaextra.Model.Cocina;
 import sgomez.ejercicios.apuntaextra.R;
 
-import static android.view.View.GONE;
-import static android.view.View.VISIBLE;
-
 public class AddExtra3Activity extends AppCompatActivity {
 
     private String servicioHabitual;
     private static final int GET_MAP_POSITION_REQUEST_CODE = 1;
     private Intent backData;
+    private Spinner spinnerFestividad;
+    private Spinner spinnerCocina;
+
+    private int cocinaSeleccionada;
+    private int festividadSeleccionada;
+    private String notas;
 
 
     @Override
@@ -30,9 +34,14 @@ public class AddExtra3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_extra3);
 
+        spinnerFestividad = (Spinner) findViewById(R.id.spinnerFestividad);
+        spinnerCocina = (Spinner) findViewById(R.id.spinnerCocina);
+
+
         servicioHabitual = getIntent().getStringExtra("servicioHabitual");
 
-        switch (servicioHabitual) {
+
+//        switch (servicioHabitual) {
 //            case "Banquetes":
 //                updateIU(GONE, GONE, VISIBLE, GONE);
 //                break;
@@ -48,7 +57,7 @@ public class AddExtra3Activity extends AppCompatActivity {
 //            default:
 //                setResult(RESULT_OK);
 //                finish();
-        }
+        //}
         backData = new Intent();
     }
 
@@ -57,22 +66,39 @@ public class AddExtra3Activity extends AppCompatActivity {
         super.onResume();
         //FESTIVIDADES
         ArrayList<String> festividades = MainActivity.getMemoryRepositories().getFestividad();
-        festividades.add(0,"Seleccionar festividad");
+        festividades.add(0, "Seleccionar festividad");
         Adapter_simple_spinner adapterFestividad = new Adapter_simple_spinner(this, R.layout.view_simple_spinner, festividades);
-        ((Spinner) findViewById(R.id.spinnerFestividad)).setAdapter(adapterFestividad);
+        (spinnerFestividad).setAdapter(adapterFestividad);
 
         //COCINAS
         ArrayList<Cocina> cocinas = MainActivity.getCocinaRepository().getCocinas();
         cocinas.add(0, new Cocina());
         cocinas.get(0).setNombre("Seleccionar cocina");
         Adapter_simple_spinner adapterCocina = new Adapter_simple_spinner(this, R.layout.view_simple_spinner, cocinas);
-        ((Spinner) findViewById(R.id.spinnerCocina)).setAdapter(adapterCocina);
+        (spinnerCocina).setAdapter(adapterCocina);
+        spinnerCocina.setSelection(cocinaSeleccionada);
+        spinnerFestividad.setSelection(festividadSeleccionada);
+        ((EditText) findViewById(R.id.editTextExtraNotas)).setText(notas);
     }
 
     public void buttonMapAdressSelectOnClick(View view) {
         startActivityForResult(new Intent(this, AddMapPositionActivity.class), GET_MAP_POSITION_REQUEST_CODE);
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        cocinaSeleccionada = spinnerCocina.getSelectedItemPosition();
+        festividadSeleccionada = spinnerFestividad.getSelectedItemPosition();
+        notas = ((EditText) findViewById(R.id.editTextExtraNotas)).getText().toString();
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -85,8 +111,14 @@ public class AddExtra3Activity extends AppCompatActivity {
         }
     }
 
-
-
+    /**
+     * Actualiza la interfaz dependiendo de que tipo de servicio habital realice el local.
+     *
+     * @param festividad Parametro de tipo GONE o VISIBILITY
+     * @param cocina     Parametro de tipo GONE o VISIBILITY
+     * @param momentoDia Parametro de tipo GONE o VISIBILITY
+     * @param direccion  Parametro de tipo GONE o VISIBILITY
+     */
     private void updateIU(int festividad, int cocina, int momentoDia, int direccion) {
         findViewById(R.id.spinnerFestividad).setVisibility(festividad);
         findViewById(R.id.spinnerCocina).setVisibility(cocina);
@@ -112,12 +144,16 @@ public class AddExtra3Activity extends AppCompatActivity {
         }
     }
 
-    private void next() {
 
-        String festividad = ((Spinner) findViewById(R.id.spinnerFestividad)).getSelectedItem().toString();
+    /**
+     * Funcion llamada al pulsar boton de siguiente addExtra, inserta los datos en un intent y lo retorna con RESULT_OK.
+     * En esta activity ningun dato es imprescindible por lo que si no es insertado se ignora y simplente no se agrega al backdata
+     */
+    private void next() {
+        String festividad = (spinnerFestividad).getSelectedItem().toString();
         if (!festividad.equals("Seleccionar festividad"))
             backData.putExtra("festividad", festividad);
-        Cocina cocina = (Cocina) ((Spinner) findViewById(R.id.spinnerCocina)).getSelectedItem();
+        Cocina cocina = (Cocina) (spinnerCocina).getSelectedItem();
         if (!cocina.getNombre().equals("Seleccionar cocina"))
             backData.putExtra("cocina", cocina.getObjectId());
         if (findViewById(R.id.radioButtonNoche).isSelected()) {
@@ -125,7 +161,8 @@ public class AddExtra3Activity extends AppCompatActivity {
         } else {
             backData.putExtra("momentoDia", "Dia");
         }
-        setResult(RESULT_OK);
+        backData.putExtra("notas", ((EditText) findViewById(R.id.editTextExtraNotas)).getText().toString());
+        setResult(RESULT_OK, backData);
         finish();
     }
 }
