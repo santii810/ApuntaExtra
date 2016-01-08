@@ -7,6 +7,7 @@
     <TextView
         android:id="@+id/textViewSimpleSpinnerView"
         android:layout_width="match_parent"
+        android:text="@string/test"
         android:layout_height="match_parent"
         android:gravity="center"
         android:textSize="25dp" />

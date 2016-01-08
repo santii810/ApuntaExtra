@@ -33,21 +33,21 @@ public class AddExtra3Activity extends AppCompatActivity {
         servicioHabitual = getIntent().getStringExtra("servicioHabitual");
 
         switch (servicioHabitual) {
-            case "Banquetes":
-                updateIU(GONE, GONE, VISIBLE, GONE);
-                break;
-            case "Carta":
-                updateIU(VISIBLE, GONE, VISIBLE, GONE);
-                break;
-            case "Catering":
-                updateIU(GONE, GONE, VISIBLE, VISIBLE);
-                break;
-            case "Casa":
-                updateIU(GONE, VISIBLE, VISIBLE, VISIBLE);
-                break;
-            default:
-                setResult(RESULT_OK);
-                finish();
+//            case "Banquetes":
+//                updateIU(GONE, GONE, VISIBLE, GONE);
+//                break;
+//            case "Carta":
+//                updateIU(VISIBLE, GONE, VISIBLE, GONE);
+//                break;
+//            case "Catering":
+//                updateIU(GONE, GONE, VISIBLE, VISIBLE);
+//                break;
+//            case "Casa":
+//                updateIU(GONE, VISIBLE, VISIBLE, VISIBLE);
+//               break;
+//            default:
+//                setResult(RESULT_OK);
+//                finish();
         }
         backData = new Intent();
     }
