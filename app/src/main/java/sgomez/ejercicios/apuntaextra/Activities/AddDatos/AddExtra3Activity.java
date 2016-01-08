@@ -57,12 +57,13 @@ public class AddExtra3Activity extends AppCompatActivity {
         super.onResume();
         //FESTIVIDADES
         ArrayList<String> festividades = MainActivity.getMemoryRepositories().getFestividad();
-        festividades.add("Seleccionar festividad");
+        festividades.add(0,"Seleccionar festividad");
         Adapter_simple_spinner adapterFestividad = new Adapter_simple_spinner(this, R.layout.view_simple_spinner, festividades);
         ((Spinner) findViewById(R.id.spinnerFestividad)).setAdapter(adapterFestividad);
 
         //COCINAS
         ArrayList<Cocina> cocinas = MainActivity.getCocinaRepository().getCocinas();
+
         cocinas.add(0, new Cocina());
         cocinas.get(0).setNombre("Seleccionar cocina");
         Adapter_simple_spinner adapterCocina = new Adapter_simple_spinner(this, R.layout.view_simple_spinner, cocinas);
@@ -79,7 +80,6 @@ public class AddExtra3Activity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == GET_MAP_POSITION_REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
-
                 backData.putExtra("latitude", (data.getDoubleExtra("latitude", 0)));
                 backData.putExtra("longitude", (data.getDoubleExtra("longitude", 0)));
             }
@@ -98,14 +98,14 @@ public class AddExtra3Activity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_add_extra1, menu);
+        getMenuInflater().inflate(R.menu.activity_add_extra_next, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.addExtra3MenuNext:
+            case R.id.addExtraMenuNext:
                 next();
                 return true;
             default:

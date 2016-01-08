@@ -51,14 +51,14 @@ public class AddExtra2Activity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_add_extra2, menu);
+        getMenuInflater().inflate(R.menu.activity_add_extra_next, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.addExtra2MenuNext:
+            case R.id.addExtraMenuNext:
                 next();
                 return true;
             default:

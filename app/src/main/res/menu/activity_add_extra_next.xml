@@ -1,9 +1,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/addExtra3MenuNext"
+        android:id="@+id/addExtraMenuNext"
         android:icon="@drawable/ic_menu_next"
         android:title="@string/save"
         app:showAsAction="ifRoom" />
-
 </menu>
