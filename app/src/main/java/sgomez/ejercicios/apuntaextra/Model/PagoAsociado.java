@@ -10,7 +10,6 @@ public class PagoAsociado {
     public PagoAsociado(String nombre, double cantidad) {
         this.nombre = nombre;
         this.cantidad = cantidad;
-
     }
 
     public String getNombre() {

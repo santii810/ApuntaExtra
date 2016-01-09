@@ -39,5 +39,13 @@
         android:onClick="buttonViewDataOnClick"
         android:text="@string/viewData"
         android:visibility="gone" />
+    <Button
+        android:id="@+id/buttonResumen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonResumenOnClick"
+        android:text="@string/resumen"
+        android:visibility="gone" />
+
 
 </LinearLayout>

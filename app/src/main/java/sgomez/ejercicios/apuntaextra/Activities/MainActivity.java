@@ -21,6 +21,7 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.parse.Parse;
 
 import sgomez.ejercicios.apuntaextra.Activities.AddDatos._AddDataActivity;
+import sgomez.ejercicios.apuntaextra.Activities.Estaditicas.ResumenActivity;
 import sgomez.ejercicios.apuntaextra.Activities.VisualizarDatos._ViewDataActivity;
 import sgomez.ejercicios.apuntaextra.Repositories.MemoryRepositories;
 import sgomez.ejercicios.apuntaextra.Repositories.ParseCamareroRepository;
@@ -236,11 +237,13 @@ public class MainActivity extends AppCompatActivity implements
             findViewById(R.id.buttonPerfil).setVisibility(View.VISIBLE);
             findViewById(R.id.buttonAddData).setVisibility(View.VISIBLE);
             findViewById(R.id.buttonViewData).setVisibility(View.VISIBLE);
+            findViewById(R.id.buttonResumen).setVisibility(View.VISIBLE);
         } else {
             findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
             findViewById(R.id.buttonPerfil).setVisibility(View.GONE);
             findViewById(R.id.buttonAddData).setVisibility(View.GONE);
             findViewById(R.id.buttonViewData).setVisibility(View.GONE);
+            findViewById(R.id.buttonResumen).setVisibility(View.GONE);
         }
     }
 
@@ -259,5 +262,9 @@ public class MainActivity extends AppCompatActivity implements
 
     public static ParseExtraRepository getExtraRepository() {
         return ExtraRepository;
+    }
+
+    public void buttonResumenOnClick(View view) {
+        startActivity(new Intent(this, ResumenActivity.class));
     }
 }
