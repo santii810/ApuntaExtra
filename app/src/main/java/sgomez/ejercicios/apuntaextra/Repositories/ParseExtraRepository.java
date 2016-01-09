@@ -128,6 +128,21 @@ public class ParseExtraRepository {
         extra.setPropina(result.getDouble(T_PROPINA));
         extra.setTiempo(result.getDouble(T_TIEMPO));
         extra.setNotas(result.getString(T_NOTAS));
+        extra.setPagoAsociado(MainActivity.getMemoryRepositories().getPagoAsociado(result.getDouble(T_PAGO_ASOCIADO)));
+        try {
+            extra.setCocina(MainActivity.getCocinaRepository().getCocina(result.getString(T_COCINA)));
+        } catch (Exception ignored) {
+        }
+        try {
+            extra.setFestividad(result.getString(T_FESTIVIDAD));
+        } catch (Exception ignored) {
+        }
+        try {
+            extra.setMomentoDia(result.getString(T_MOMENTO_DIA));
+        } catch (Exception ignored) {
+        }
+        extra.setLatitude(result.getDouble(T_LATITUDE));
+        extra.setLongitude(result.getDouble(T_LONGITUDE));
         return extra;
     }
 
