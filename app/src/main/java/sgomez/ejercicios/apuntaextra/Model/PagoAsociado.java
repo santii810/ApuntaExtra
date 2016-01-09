@@ -6,7 +6,6 @@ package sgomez.ejercicios.apuntaextra.Model;
 public class PagoAsociado {
     private String nombre;
     private double cantidad;
-    private int id;
 
     public PagoAsociado(String nombre, double cantidad) {
         this.nombre = nombre;

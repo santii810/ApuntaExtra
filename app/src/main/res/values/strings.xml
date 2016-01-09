@@ -44,4 +44,5 @@
     <string name="cobradoObligatorio">Cobrado:*</string>
     <string name="pagoAsocObligatorio">Pago asociado:*</string>
     <string name="test">test</string>
+    <string name="date">Fecha:</string>
 </resources>

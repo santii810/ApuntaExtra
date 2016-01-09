@@ -6,6 +6,7 @@ import sgomez.ejercicios.apuntaextra.Model.PagoAsociado;
 
 /**
  * Created by sgomez on 30/12/2015.
+ *
  */
 public class MemoryRepositories {
 
@@ -31,6 +32,13 @@ public class MemoryRepositories {
     public PagoAsociado getPagoAsociado(String pagoAsociado) {
         for (PagoAsociado item : this.getPagosAsociados()) {
             if (item.getNombre().equals(pagoAsociado)) return item;
+        }
+        return null;
+    }
+
+    public PagoAsociado getPagoAsociado(Double pagoAsociado) {
+        for (PagoAsociado item : this.getPagosAsociados()) {
+            if (item.getCantidad() == pagoAsociado) return item;
         }
         return null;
     }
