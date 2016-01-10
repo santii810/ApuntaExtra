@@ -21,7 +21,6 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.parse.Parse;
 
 import sgomez.ejercicios.apuntaextra.Activities.AddDatos._AddDataActivity;
-import sgomez.ejercicios.apuntaextra.Activities.Estaditicas.ResumenActivity;
 import sgomez.ejercicios.apuntaextra.Activities.VisualizarDatos._ViewDataActivity;
 import sgomez.ejercicios.apuntaextra.Repositories.MemoryRepositories;
 import sgomez.ejercicios.apuntaextra.Repositories.ParseCamareroRepository;

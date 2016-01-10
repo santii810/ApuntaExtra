@@ -47,7 +47,6 @@ public class MemoryRepositories {
         ArrayList<String> festividades = new ArrayList<>();
         festividades.add("Boda");
         festividades.add("Comunion");
-        festividades.add("Carta");
         festividades.add("Bautizo");
         festividades.add("Boda de plata");
         festividades.add("Boda de oro");

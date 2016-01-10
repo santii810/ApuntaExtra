@@ -94,7 +94,7 @@ public class ParseExtraRepository {
         ArrayList<Extra> extras = new ArrayList<>();
         ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
         query.whereEqualTo(T_USUARIO, objectId);
-        query.orderByAscending(T_FECHA);
+        query.orderByDescending(T_FECHA);
         try {
             List<ParseObject> result = query.find();
             for (ParseObject object : result) {
