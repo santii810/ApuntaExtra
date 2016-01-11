@@ -55,8 +55,7 @@ public class ViewExtraDataActivity extends AppCompatActivity {
 
         etFecha.setText(formatearFecha(extra.getFecha()));
         etLocal.setText(extra.getLocal().getNombre());
-        etPagoAsociado.setText(extra.getPagoAsociado().getNombre() + " ("
-                + extra.getPagoAsociado().getCantidad() + ")");
+        etPagoAsociado.setText(extra.getPagoAsociado().getNombre() + " (" + extra.getPagoAsociado().getCantidad() + ")");
         etCobrado.setText((Integer.toString(extra.getCobrado())));
 
         if (extra.getMomentoDia().equals(""))
@@ -69,28 +68,28 @@ public class ViewExtraDataActivity extends AppCompatActivity {
         if (extra.getTiempo() != 0) {
             etTiempo.setText(Double.toString(extra.getTiempo()));
         } else {
-            findViewById(R.id.linearLayoutTiempo).setVisibility(View.GONE);
+            etTiempo.setVisibility(View.GONE);
         }
         if (extra.getPropina() != 0) {
             etPropina.setText(Double.toString(extra.getPropina()));
         } else {
-            findViewById(R.id.linearLayoutPropina).setVisibility(View.GONE);
+            etPropina.setVisibility(View.GONE);
         }
 
         if (extra.getNotas() != null) {
             etNotas.setText(extra.getNotas());
         } else {
-            findViewById(R.id.linearLayoutNotas).setVisibility(View.GONE);
+            etNotas.setVisibility(View.GONE);
         }
         if (extra.getFestividad() != null) {
             etFestividad.setText(extra.getFestividad());
         } else {
-            findViewById(R.id.linearLayoutFestividad).setVisibility(View.GONE);
+            etFestividad.setVisibility(View.GONE);
         }
-        if (extra.getCocina() != null) {
+        if (extra.getCocina() !=null) {
             etCocina.setText(extra.getCocina().getNombre());
         } else {
-            findViewById(R.id.linearLayoutCocina).setVisibility(View.GONE);
+            etCocina.setVisibility(View.GONE);
         }
     }
 

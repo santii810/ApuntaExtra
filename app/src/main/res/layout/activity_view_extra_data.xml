@@ -158,7 +158,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/linearLayoutCocina"
                 android:orientation="horizontal">
 
                 <TextView
@@ -180,7 +179,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/linearLayoutFestividad"
                 android:orientation="horizontal">
 
                 <TextView
@@ -202,7 +200,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/linearLayoutNotas"
                 android:orientation="horizontal">
 
                 <TextView

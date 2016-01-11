@@ -55,4 +55,5 @@
     <string name="appTitle">Apunta Extras</string>
     <string name="informeDeIngresos">Informe de ingresos</string>
     <string name="informeDeGastos">Informe de gastos</string>
+    <string name="date">Fecha:</string>
 </resources>
