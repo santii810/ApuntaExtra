@@ -2,12 +2,19 @@ package sgomez.ejercicios.apuntaextra.Model;
 
 /**
  * Created by sgomez on 28/12/2015.
+ * Clase de locales
  */
 public class Local extends Entorno {
     private String Descripcion;
     private double latitude;
     private double longitude;
     private String ServicioHabitual;
+
+    public Local() {    }
+
+    public Local(String objectId, String nombre) {
+        super(objectId,nombre);
+    }
 
     public String getDescripcion() {
         return Descripcion;

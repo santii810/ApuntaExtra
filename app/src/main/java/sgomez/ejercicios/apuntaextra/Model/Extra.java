@@ -6,6 +6,7 @@ import sgomez.ejercicios.apuntaextra.Activities.MainActivity;
 
 /**
  * Created by sgomez on 05/01/2016.
+ * Clase de extras
  */
 public class Extra {
     private Date fecha;
@@ -25,6 +26,12 @@ public class Extra {
 
     public Extra() {
         this.usuario = MainActivity.getUsuario();
+    }
+
+    public Extra(String objectId, Date fecha, String local) {
+        ObjectId = objectId;
+        this.fecha = fecha;
+        this.local = MainActivity.getLocalRepository().getLocal(local);
     }
 
     public Date getFecha() {

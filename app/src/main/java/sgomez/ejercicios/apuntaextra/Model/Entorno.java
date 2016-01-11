@@ -2,6 +2,7 @@ package sgomez.ejercicios.apuntaextra.Model;
 
 /**
  * Created by sgomez on 28/12/2015.
+ * Clase de entorno
  */
 public class Entorno {
     private String ObjectId;
@@ -9,6 +10,13 @@ public class Entorno {
     private boolean Activo;
     private String Direccion;
 
+    public Entorno() {
+    }
+
+    public Entorno(String objectId, String nombre) {
+        ObjectId = objectId;
+        Nombre = nombre;
+    }
 
     public String getDireccion() {
         return Direccion;

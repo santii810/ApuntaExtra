@@ -12,6 +12,7 @@ import sgomez.ejercicios.apuntaextra.Model.Local;
 
 /**
  * Created by sgomez on 29/12/2015.
+ * Repositorio de locales para parse
  */
 public class ParseLocalRepository {
     private final String DBNAME = "Locales";
@@ -61,8 +62,21 @@ public class ParseLocalRepository {
         query.whereEqualTo(T_ID, objectId);
         try {
             List<ParseObject> result = query.find();
-//            if (result.size() > 0) return null;
             return rellenar(result.get(0));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Local getLocalName(String objectId) {
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(DBNAME);
+        query.whereEqualTo(T_ID, objectId);
+        try {
+            List<ParseObject> result = query.find();
+
+            return new Local(result.get(0).getObjectId(), result.get(0).getString(T_NOMBRE));
+
         } catch (ParseException e) {
             e.printStackTrace();
         }

@@ -97,8 +97,8 @@ public class ParseExtraRepository {
         query.orderByDescending(T_FECHA);
         try {
             List<ParseObject> result = query.find();
-            for (ParseObject object : result) {
-                extras.add(rellenar(object));
+            for (ParseObject item : result) {
+                extras.add(new Extra(item.getObjectId(), item.getDate(T_FECHA), item.getString(T_LOCAL)));
             }
         } catch (ParseException e) {
             e.printStackTrace();
